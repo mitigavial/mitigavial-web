@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #072136;
   background: #fff;
   line-height: 1.6;
@@ -56,8 +56,9 @@ a {
 }
 /* Header Title */
 .header-title {
+  font-family: "Montserrat", sans-serif !important;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: bold;
   line-height: 1.1;
   letter-spacing: 0.5px;
@@ -76,7 +77,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.5rem;
 }
 .site-nav ul {
   display: flex;
@@ -88,7 +88,7 @@ a {
 .site-nav a {
   color: var(--white);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1rem;
   letter-spacing: 0.5px;
 }
 .site-nav a.active {
@@ -100,9 +100,10 @@ a {
 .btn-header {
   background: #c7c7c7;
   color: #072136 !important;
-  padding: 0.8rem 2.5rem;
+  padding: 0.5rem 1rem !important;
   border-radius: 7px;
-  font-size: 16px;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif !important;
   font-weight: bold;
   box-shadow: 2px 2px 6px #22222233;
   border: none;
@@ -170,18 +171,26 @@ a {
   position: absolute;
   color: var(--blue);
   background: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
-  border-radius: 5px;
+  width: 60%;
+  padding: 3rem;
+  margin-top: 14rem;
+  border-radius: 4px;
 }
 .hero-title {
-  font-size: 54px;
+  font-size: 3.375rem;
+  font-family: "Montserrat", sans-serif !important;
   font-weight: bold;
   color: var(--blue);
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 .hero-subtitle {
-  font-size: 26px;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 200 !important;
+  line-height: 1.4;
+  font-size: 1.625rem;
+  align-content: center;
   color: var(--blue-dark);
+  margin-bottom: 1.5rem;
 }
 
 /* ==== ABOUT ==== */
@@ -190,7 +199,8 @@ a {
   background: #f7f7f7;
 }
 .about h2 {
-  font-size: 32px;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif !important;
   font-weight: bold;
   color: var(--blue);
   margin-bottom: 1.5rem;
@@ -198,6 +208,9 @@ a {
 }
 .about p {
   margin-bottom: 2rem;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif;
+  color: #072136;
   text-align: justify;
   max-width: 900px;
   margin-left: auto;
@@ -210,8 +223,9 @@ a {
 .about .benefits li {
   display: flex;
   align-items: center;
-  margin-bottom: 1.2rem;
-  font-size: 18px;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif;
   color: var(--blue-dark);
 }
 .about .icon {
@@ -252,15 +266,16 @@ a {
   border-right: none;
 }
 .card h3 {
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--blue);
+  font-size: 1.625rem;
+  font-weight: semibold;
+  color: #0c3c60;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
 .card p {
-  font-size: 17px;
+  font-size: 1.125rem !important;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 2.5rem;
   color: var(--blue-dark);
   text-align: justify;
@@ -274,13 +289,15 @@ a {
 }
 
 .contact h2 {
-  font-size: 32px;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 0.5rem;
   text-align: center;
 }
 
 .contact-subtitle {
-  font-size: 26px;
+  font-size: 1.625rem;
+  font-family: "Roboto", sans-serif;
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -312,7 +329,8 @@ a {
 
 .contacto-info p {
   margin-bottom: 1.2rem;
-  font-size: 18px;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
   color: var(--blue-dark);
   display: flex;
   align-items: center;
@@ -358,7 +376,8 @@ a {
 }
 .form-group label {
   margin-bottom: 0.3rem;
-  font-size: 16px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif;
   color: #fff;
 }
 .form-group input {
@@ -366,7 +385,8 @@ a {
   border: none;
   border-radius: 0;
   color: #fff;
-  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif;
   padding: 0.5rem 0;
   border-bottom: none;
   box-shadow: none;
@@ -389,7 +409,8 @@ a {
   padding: 0.75rem 2rem;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -449,19 +470,19 @@ a {
 }
 
 .footer-brand h3 {
-  font-size: 24px;
+  font-size: 1.25rem;
   font-weight: bold;
   margin: 0.5rem 0 0.5rem;
 }
 
 .footer-brand p {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--white);
 }
 
 .footer-menu h4,
 .footer-contact h4 {
-  font-size: 20px;
+  font-size: 1.125rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -473,11 +494,12 @@ a {
 
 .footer-menu li {
   margin-bottom: 0.75rem;
+  font-size: 1rem;
 }
 
 .footer-menu a {
   color: var(--white);
-  font-size: 16px;
+  font-size: 1rem;
   transition: color 0.3s;
 }
 
@@ -499,6 +521,7 @@ a {
   display: flex;
   align-items: center;
   margin-bottom: 0.75rem;
+  font-size: 1rem;
 }
 
 .footer-icon {
@@ -530,7 +553,8 @@ a {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -548,18 +572,20 @@ a {
 .btn-secondary {
   display: block;
   margin: 2.5rem auto 0 auto;
-  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   font-weight: bold;
   background: var(--blue-dark);
   color: var(--white);
   box-shadow: 2px 2px 6px #22222233;
-  padding: 0.5rem 1.2rem;
+  padding: 0.7rem 2rem;
   border-radius: 7px;
   border: none;
   transition: background 0.3s, color 0.3s;
   text-align: center;
   min-width: 220px;
   max-width: 260px;
+  margin: 0 auto;
 }
 .btn-secondary:hover {
   background: var(--white);
@@ -570,12 +596,13 @@ a {
 .btn-grid {
   margin: 0 auto;
   display: block;
-  font-size: 20px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   font-weight: bold;
   background: var(--blue-dark);
   color: var(--white);
   box-shadow: 2px 2px 6px #22222233;
-  padding: 0.8rem 2rem;
+  padding: 0.7rem 2rem;
   border-radius: 7px;
   border: none;
   transition: background 0.3s, color 0.3s;
@@ -591,10 +618,11 @@ a {
   background: var(--white);
   color: var(--blue-dark);
   border: 2px solid var(--white);
-  padding: 0.75rem 2rem;
+  padding: 0.7rem 2rem;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
 }
 .btn-form:hover {
   background: transparent;
@@ -606,7 +634,8 @@ a {
 .form-message {
   margin-top: 1.5rem;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.625rem;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   display: none;
 }
@@ -660,16 +689,21 @@ a {
   gap: 2rem;
   align-items: center;
 }
-.intro-text h1 {
-  font-size: 36px;
+.nosotros-title {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold;
+  text-transform: uppercase;
   color: var(--blue);
-  margin-bottom: 1rem;
-}
-.intro-text p {
+  margin-top: 3rem;
   margin-bottom: 2rem;
-  font-size: 18px;
+}
+.nosotros-text {
+  font-size: 1.125rem !important;
+  font-family: "Roboto", sans-serif !important;
   text-align: justify;
   color: var(--blue-dark);
+  margin-bottom: 2rem;
 }
 .intro-img img {
   width: 100%;
@@ -683,7 +717,9 @@ a {
   background: #f7f7f7;
 }
 .promesa h2 {
-  font-size: 32px;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold;
   color: var(--blue);
   margin-bottom: 2rem;
 }
@@ -692,7 +728,7 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   background: #fff;
-  border: 1.5px solid #757575; 
+  border: 1.5px solid #757575;
   border-radius: 0;
   margin: 0 auto 2.5rem auto;
   max-width: 1200px;
@@ -701,7 +737,7 @@ a {
   align-items: stretch;
 }
 .promesa-grid-rect > .card {
-  border-right: 1.5px solid #757575; 
+  border-right: 1.5px solid #757575;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -718,16 +754,19 @@ a {
   border-right: none;
 }
 .promesa-grid-rect > .card h3 {
-  font-size: 24px;
+  font-size: 1.625rem;
+  font-family: "Montserrat", sans-serif !important;
   color: var(--blue);
   margin: 1rem 0;
   font-weight: bold;
 }
 .promesa-grid-rect > .card p {
-  font-size: 16px;
+  font-size: 1.125rem !important;
+  font-family: "Roboto", sans-serif !important;
   color: var(--blue-dark);
   margin: 0;
   line-height: 1.5;
+  text-align: center;
 }
 .icon-promise {
   width: 72px;
@@ -744,9 +783,11 @@ a {
   text-align: center;
 }
 .como-trabajamos h2 {
-  font-size: 32px;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold;
   color: var(--blue);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 .grid-4 {
   display: grid;
@@ -767,11 +808,14 @@ a {
   height: 72px;
   margin-bottom: 1.2rem;
 }
-.work-item p {
-  font-size: 17px;
+.nosotros-text-2 {
+  font-size: 1.125rem !important;
+  font-family: "Roboto", sans-serif !important;
+  line-height: 1.4;
   color: var(--blue-dark);
   margin: 0;
   text-align: center;
+  margin-bottom: 4rem;
 }
 /* Tarjetas de Como Trabajamos */
 
@@ -873,40 +917,64 @@ a {
   justify-content: center;
 }
 .hero-content-servicios h1 {
-  font-size: 42px;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif !important;
   font-weight: bold;
   color: var(--blue);
   margin-bottom: 2rem;
   text-align: center;
 }
 .hero-content-servicios p {
-  font-size: 22px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   color: var(--blue-dark);
   margin-bottom: 1.2rem;
   text-align: center;
 }
 .hero-content-servicios h3 {
-  font-size: 28px;
+  font-size: 1.625rem;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold;
   color: var(--blue-dark);
   margin-bottom: 2rem;
   text-align: center;
 }
-.btn-primary {
-  display: block;
-  margin: 0 auto;
-  font-size: 20px;
+
+.h2-titles {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif !important;
   font-weight: bold;
-  background: var(--blue-dark);
-  color: var(--white);
-  box-shadow: 2px 2px 6px #22222233;
-  padding: 0.8rem 2rem;
-  border-radius: 7px;
-  border: none;
-  transition: background 0.3s, color 0.3s;
+  color: #0c3c60 !important;
   text-align: center;
-  min-width: 220px;
-  max-width: 260px;
+  margin-bottom: 2rem;
 }
+
+.p-services {
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
+  line-height: 1.5;
+  color: var(--blue-dark);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.p-services-justify {
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
+  line-height: 1.5;
+  color: var(--blue-dark);
+  margin-bottom: 3rem;
+  text-align: justify;
+}
+
+.p-services-16 {
+  font-size: 1rem !important;
+  font-family: "Roboto", sans-serif !important;
+  line-height: 1.5;
+  color: var(--blue-dark);
+  margin-bottom: 3rem;
+}
+
 .btn-primary:hover {
   background: var(--white);
   color: var(--blue);
@@ -947,16 +1015,18 @@ a {
 
 /* ==== CONTACTO PAGE ==== */
 .intro-contacto {
-  padding: 4rem 0;
+  padding: 4rem 0 0 0;
   text-align: center;
 }
 .intro-contacto h1 {
   color: var(--blue);
-  font-size: 36px;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif !important;
   margin-bottom: 1rem;
 }
 .intro-contacto p {
-  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   color: var(--blue-dark);
 }
 
@@ -981,12 +1051,15 @@ a {
 .contacto-info h2 {
   color: var(--blue);
   margin-bottom: 1.5rem;
-  font-size: 28px;
+  font-size: 1.625rem;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold;
   text-align: left;
 }
 .contacto-info p {
   margin-bottom: 1.2rem;
-  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   color: var(--blue-dark);
   display: flex;
   align-items: center;
@@ -1006,10 +1079,10 @@ a {
   display: inline-block;
 }
 .contacto-form {
-  background: var(--blue-dark);
+  background: var(--blue);
   color: #fff;
   padding: 2.5rem 2rem;
-  border-radius: 0;
+  border-color: var(--blue);
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -1017,7 +1090,9 @@ a {
 }
 .contacto-form-title {
   text-align: center;
-  font-size: 28px;
+  font-size: 1.625rem;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold;
   margin-bottom: 2.5rem;
   color: #fff;
 }
@@ -1034,7 +1109,8 @@ a {
 }
 .form-group label {
   margin-bottom: 0.3rem;
-  font-size: 16px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   color: #fff;
 }
 .form-group input {
@@ -1042,7 +1118,8 @@ a {
   border: none;
   border-radius: 0;
   color: #fff;
-  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   padding: 0.5rem 0;
   border-bottom: none;
   box-shadow: none;
@@ -1065,7 +1142,8 @@ a {
   padding: 0.75rem 2rem;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -1104,21 +1182,22 @@ a {
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #333;
 }
 
 /* Hero */
 .faq-hero {
   text-align: center;
-  padding: 4rem 1rem 2rem;
+  padding: 4rem 0;
   background-color: var(--gris);
 }
 
 .faq-hero h1 {
   font-size: 2rem;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold;
   color: var(--azul-oscuro);
-  font-weight: 700;
   margin-bottom: 0;
 }
 
@@ -1130,21 +1209,24 @@ body {
 }
 
 .faq-item {
-  border-bottom: 1.5px solid #ccc; 
+  border-bottom: 1.5px solid #c7c7c7;
   padding: 2rem 0;
 }
 
 .faq-number {
-  font-size: 1.5rem;
+  font-size: 1.625rem;
+  font-family: "Montserrat", sans-serif !important;
   font-weight: bold;
-  color: var(--azul-claro);
+  color: var(--blue-dark);
   margin-right: 1rem;
   text-align: center;
-  margin-top: 0.8rem;
+  margin-top: 1rem;
 }
 
 .faq-question {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif !important;
+  color: var(--blue);
   font-weight: bold;
   margin-bottom: 0.5rem;
   display: flex;
@@ -1158,7 +1240,9 @@ body {
 
 .faq-answer {
   margin-left: 2.3rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
+  color: #666;
   line-height: 1.5;
 }
 
@@ -1169,8 +1253,9 @@ body {
 }
 
 .faq-cta p {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: normal;
   margin-bottom: 1rem;
   color: var(--azul-oscuro);
 }
@@ -1207,14 +1292,16 @@ body {
 }
 .que-es-title {
   text-align: center;
-  font-size: 36px;
+  font-size: 1.625rem;
+  font-family: "Monstserrat", sans-serif !important;
   font-weight: bold;
   color: var(--blue);
   margin-bottom: 2rem;
 }
 .que-es-desc {
   text-align: justify;
-  font-size: 20px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   color: var(--blue-dark);
   margin-bottom: 1.5rem;
   max-width: 900px;
@@ -1230,7 +1317,8 @@ body {
 .check-list li {
   display: flex;
   align-items: center;
-  font-size: 20px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   color: var(--blue-dark);
   margin-bottom: 1.5rem;
   justify-content: flex-start;
@@ -1274,16 +1362,10 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
 }
-.plazos-title {
-  text-align: center;
-  font-size: 36px;
-  font-weight: bold;
-  color: var(--blue);
-  margin-bottom: 2rem;
-}
+
 .plazos-desc {
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--blue-dark);
   margin-bottom: 2.5rem;
   max-width: 900px;
@@ -1316,13 +1398,16 @@ body {
   margin-right: auto;
 }
 .plazo-card h3 {
-  font-size: 22px;
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif !important;
   color: var(--blue-dark);
   font-weight: bold;
-  margin-bottom: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
 }
 .plazo-card p {
-  font-size: 17px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   color: var(--blue-dark);
   margin-bottom: 0.5rem;
 }
@@ -1331,7 +1416,7 @@ body {
 }
 .plazos-justificado {
   text-align: justify;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--blue-dark);
   max-width: 900px;
   margin: 0 auto;
@@ -1471,9 +1556,11 @@ body {
   height: 180px;
 }
 .timeline-card h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
+  font-family: "Monstserrat", sans-serif !important;
   font-weight: bold;
   margin-bottom: 1rem;
+  line-height: 1.4;
   color: #0c3c60;
 }
 .timeline-card p {
@@ -1603,7 +1690,8 @@ body {
 .btn-cta {
   background: var(--blue-dark);
   color: var(--white);
-  font-size: 22px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   font-weight: bold;
   padding: 1rem 2.5rem;
   border-radius: 7px;
@@ -1614,10 +1702,11 @@ body {
   min-width: 420px;
   max-width: 700px;
   display: block;
+  margin: 0 auto;
 }
 .btn-cta:hover {
-  background: #fff;
-  color: var(--blue-dark);
+  background: var(--blue);
+  color: var(--white);
   border: 1px solid var(--blue-dark);
 }
 @media (max-width: 900px) {
@@ -1684,7 +1773,9 @@ body {
   border-radius: 0 5px 5px 0;
 }
 .btn.btn-primary {
-  font-size: 20px;
+  display: block;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif !important;
   font-weight: bold;
   background: var(--blue-dark);
   color: var(--white);
@@ -1696,11 +1787,10 @@ body {
   text-align: center;
   min-width: 320px;
   max-width: 420px;
-  display: block;
 }
 .btn.btn-primary:hover {
-  background: var(--white);
-  color: var(--blue);
+  background: var(--blue);
+  color: var(--white);
   border: 1px solid var(--blue);
 }
 @media (max-width: 900px) {
