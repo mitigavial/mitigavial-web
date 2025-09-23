@@ -53,8 +53,9 @@ a {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  height: 100%;
+  margin-top: -0.8rem;
 }
-/* Header Title */
 .header-title {
   font-family: "Montserrat", sans-serif !important;
   color: #fff;
@@ -65,6 +66,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 }
 .header-logo {
   height: 80px;
@@ -77,6 +79,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: center;
 }
 .site-nav ul {
   display: flex;
@@ -564,6 +567,9 @@ a {
 .btn-primary {
   background: var(--blue-dark);
   color: var(--white);
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 .btn-primary:hover {
   background: var(--blue);
@@ -741,7 +747,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -757,8 +763,12 @@ a {
   font-size: 1.625rem;
   font-family: "Montserrat", sans-serif !important;
   color: var(--blue);
-  margin: 1rem 0;
+  margin: 0 0 1rem 0;
   font-weight: bold;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .promesa-grid-rect > .card p {
   font-size: 1.125rem !important;
@@ -767,6 +777,11 @@ a {
   margin: 0;
   line-height: 1.5;
   text-align: center;
+  min-height: 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.5rem;
 }
 .icon-promise {
   width: 72px;
@@ -1063,6 +1078,7 @@ a {
   color: var(--blue-dark);
   display: flex;
   align-items: center;
+  min-height: 2.5rem;
 }
 .contacto-icons {
   margin-top: 2.5rem;
@@ -1106,6 +1122,9 @@ a {
   flex-direction: column;
   position: relative;
   margin-bottom: 1.5rem;
+}
+.form-grid .form-group:first-child {
+  margin-top: 0;
 }
 .form-group label {
   margin-bottom: 0.3rem;
@@ -1220,7 +1239,9 @@ body {
   color: var(--blue-dark);
   margin-right: 1rem;
   text-align: center;
-  margin-top: 1rem;
+  flex-shrink: 0;
+  width: 2.5rem;
+  display: inline-block;
 }
 
 .faq-question {
@@ -1230,16 +1251,18 @@ body {
   font-weight: bold;
   margin-bottom: 0.5rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   background: none;
   border: none;
   box-shadow: none;
   outline: none;
   cursor: pointer;
+  width: 100%;
+  text-align: left;
 }
 
 .faq-answer {
-  margin-left: 2.3rem;
+  margin-left: 3.5rem;
   font-size: 1.125rem;
   font-family: "Roboto", sans-serif !important;
   color: #666;
@@ -1277,11 +1300,15 @@ body {
 
 @media (max-width: 768px) {
   .faq-question {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
+  .faq-number {
+    width: 2rem;
+    margin-right: 0.75rem;
+  }
   .faq-answer {
-    margin-left: 0;
+    margin-left: 2.75rem;
   }
 }
 
@@ -1403,13 +1430,24 @@ body {
   color: var(--blue-dark);
   font-weight: bold;
   line-height: 1.4;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .plazo-card p {
   font-size: 1.125rem;
   font-family: "Roboto", sans-serif !important;
   color: var(--blue-dark);
   margin-bottom: 0.5rem;
+  min-height: 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
 }
 .plazos-nota {
   margin-top: 2.5rem;
@@ -1787,6 +1825,7 @@ body {
   text-align: center;
   min-width: 320px;
   max-width: 420px;
+  margin: 0 auto;
 }
 .btn.btn-primary:hover {
   background: var(--blue);
