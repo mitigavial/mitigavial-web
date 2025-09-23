@@ -687,20 +687,6 @@ a {
   color: var(--blue);
   margin-bottom: 2rem;
 }
-.promesa .card {
-  text-align: center;
-  padding: 2.5rem 2rem 2rem 2rem;
-  border: none;
-  min-height: 220px;
-  max-width: 340px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  flex: 1;
-}
 .promesa-grid-rect {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -710,11 +696,9 @@ a {
   border-radius: 0;
   margin: 0 auto 2.5rem auto;
   max-width: 1200px;
-  min-height: 260px;
   box-sizing: border-box;
   position: relative;
   align-items: stretch;
-  justify-items: center;
 }
 .promesa-grid-rect > .card {
   border-right: 1.5px solid #757575; 
@@ -725,13 +709,25 @@ a {
   height: 100%;
   width: 100%;
   text-align: center;
-  padding: 2.5rem 2rem 2rem 2rem;
+  padding: 2.5rem 2rem;
   box-sizing: border-box;
-  flex: 1;
   min-height: 280px;
+  background: #fff;
 }
 .promesa-grid-rect > .card:last-child {
   border-right: none;
+}
+.promesa-grid-rect > .card h3 {
+  font-size: 24px;
+  color: var(--blue);
+  margin: 1rem 0;
+  font-weight: bold;
+}
+.promesa-grid-rect > .card p {
+  font-size: 16px;
+  color: var(--blue-dark);
+  margin: 0;
+  line-height: 1.5;
 }
 .icon-promise {
   width: 72px;
@@ -739,6 +735,7 @@ a {
   margin-bottom: 1.2rem;
   color: #757575;
   display: block;
+  flex-shrink: 0;
 }
 
 /* Cómo Trabajamos */
@@ -787,6 +784,32 @@ a {
   .intro-grid {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+  .promesa-grid-rect {
+    grid-template-columns: 1fr;
+    border: none;
+  }
+  .promesa-grid-rect > .card {
+    border-right: none;
+    border-bottom: 1.5px solid #757575;
+    min-height: 220px;
+    padding: 2rem 1.5rem;
+  }
+  .promesa-grid-rect > .card:last-child {
+    border-bottom: none;
+  }
+  .promesa h2 {
+    font-size: 28px;
+  }
+  .promesa-grid-rect > .card h3 {
+    font-size: 20px;
+  }
+  .promesa-grid-rect > .card p {
+    font-size: 15px;
+  }
+  .icon-promise {
+    width: 56px;
+    height: 56px;
   }
   .grid-4 {
     grid-template-columns: 1fr 1fr;
@@ -1622,7 +1645,7 @@ body {
 .nosotros-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: #f7f7f7,
+  color: #f7f7f7;
   gap: 0;
   max-width: 1100px;
   margin: 0 auto;
