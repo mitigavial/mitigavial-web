@@ -1409,24 +1409,45 @@ body {
   max-width: 900px;
 }
 .check-list li {
-  display: flex;
-  align-items: center;
+  /*
+  display: flex; 
+  align-items: flex-start;*/
   font-size: 1.125rem;
   font-family: "Roboto", sans-serif !important;
   color: var(--blue-dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   justify-content: flex-start;
+  position: relative;
+  display: block;
+  padding-left: 2rem;
 }
+
 .icon-check {
   width: 36px;
   height: 36px;
   margin-right: 1rem;
+  align-self: flex-start;
+  /*margin-top: 0.1rem;*/
+  margin-top: calc((1.5-1) * 0.5-1em-0.6em);
   flex-shrink: 0;
   fill: #0c3c60 !important;
   fill: #0c3c60;
   filter: brightness(0) saturate(100%) invert(14%) sepia(99%) saturate(747%)
     hue-rotate(175deg) brightness(92%) contrast(101%);
 }
+
+.check-list li .icon-check {
+  position: absolute;
+  left: 0;
+  top: 0.06em; /* ← CLAVE: alinea con el tope de la 1ª línea */
+  width: 26px;
+  height: 26px;
+  display: block;
+  /* evita que estilos anteriores lo "centren" */
+  margin: 0 !important;
+  transform: translateY(0); /* asegura que no haya desplazamientos previos */
+}
+
 @media (max-width: 900px) {
   .que-es-title {
     font-size: 24px;
