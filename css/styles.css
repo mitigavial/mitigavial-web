@@ -316,7 +316,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 0;
-  align-items: stretch;
+  align-items: start;
 }
 .contacto-info {
   background: #f7f7f7;
@@ -335,16 +335,29 @@ a {
 }
 
 .contacto-info p {
-  margin-bottom: 1.2rem;
-  font-size: 1rem;
+  margin-bottom: 0.1rem;
+  font-size: 1.125rem !important;
   font-family: "Roboto", sans-serif;
   color: var(--blue-dark);
   display: flex;
   align-items: center;
 }
+
+.contacto-info p:first-of-type {
+  margin-top: calc(0.15rem + 0.3rem + 0.5rem);
+}
+
+.contacto-info a {
+  color: #072136 !important;
+}
+.contacto-info a:hover {
+  color: #0c3c60 !important;
+  text-decoration: underline;
+}
 .contacto-icons {
   margin-top: 2.5rem;
 }
+
 .contacto-icon {
   width: 28px;
   height: 28px;
