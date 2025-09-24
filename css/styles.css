@@ -1605,10 +1605,12 @@ body {
 }
 .timeline-steps {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  position: relative;
-  z-index: 2;
+  /*grid-template-columns: repeat(4, 1fr); */
+  grid-template-columns: repeat(4, 16.25rem);
+  column-gap: 2rem;
+  justify-content: space-between;
+  /*position: relative;
+  z-index: 2; */
 }
 .timeline-step {
   display: flex;
@@ -1645,42 +1647,55 @@ body {
 }
 .timeline-vertical {
   width: 8px;
-  height: 100px;
+  height: 7.5rem;
   background: #0c3c60;
-  margin-bottom: 0.5rem;
   margin-top: -20px;
   z-index: 2;
   border-radius: 4px;
 }
 .timeline-card {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  grid-template-rows: 3.2em auto;
   background: #f7f7f7;
   border: 1px solid #0c3c60;
   color: #0c3c60;
   padding: 1.5rem 1rem;
-  margin-top: 0.5rem;
-  min-width: 240px;
-  max-width: 240px;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px #22222222;
+  width: 16.25rem;
+  min-height: 11rem;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px #f7f7f7;
   text-align: center;
-  display: flex;
+  margin-top: -1px;
+  /*display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 180px;
+  height: 180px; */
 }
 .timeline-card h3 {
   font-size: 1.25rem;
   font-family: "Monstserrat", sans-serif !important;
   font-weight: bold;
-  margin-bottom: 1rem;
-  line-height: 1.4;
+  margin: 0;
+  /*margin-bottom: 1rem; */
+  line-height: 1.3;
   color: #0c3c60;
+  text-align: center;
+  align-self: start;
 }
 .timeline-card p {
   font-size: 16px;
+  font-family: "Roboto", sans-serif !important;
   color: #0c3c60;
-  margin-bottom: 0;
+  line-height: 1.4;
+  margin-top: 1.5rem;
+  text-align: justify;
+  align-self: start;
+  min-height: 0;
+  display: block;
 }
 @media (max-width: 900px) {
   .timeline-steps {
