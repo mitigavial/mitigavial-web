@@ -237,6 +237,9 @@ a {
   height: 28px;
   margin-right: 1rem;
   fill: var(--blue);
+  color: var(--blue);
+  filter: brightness(0) saturate(100%) invert(14%) sepia(99%) saturate(747%)
+    hue-rotate(175deg) brightness(92%) contrast(101%);
 }
 
 /* ==== GRID SECTION ==== */
@@ -1406,7 +1409,10 @@ body {
   height: 36px;
   margin-right: 1rem;
   flex-shrink: 0;
+  fill: #0c3c60 !important;
   fill: #0c3c60;
+  filter: brightness(0) saturate(100%) invert(14%) sepia(99%) saturate(747%)
+    hue-rotate(175deg) brightness(92%) contrast(101%);
 }
 @media (max-width: 900px) {
   .que-es-title {
@@ -1452,12 +1458,16 @@ body {
 }
 .plazos-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2.5rem;
+  align-items: start;
   margin-bottom: 2.5rem;
   justify-items: center;
 }
 .plazo-card {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: 5.625rem 3.8em auto;
   background: transparent;
   text-align: center;
   padding: 0;
@@ -1472,6 +1482,7 @@ body {
   filter: brightness(0) saturate(100%) invert(14%) sepia(99%) saturate(747%)
     hue-rotate(175deg) brightness(92%) contrast(101%);
   display: block;
+  align-self: end;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1481,12 +1492,19 @@ body {
   color: var(--blue-dark);
   font-weight: bold;
   line-height: 1.4;
-  margin-bottom: 0.5rem;
-  min-height: 2.5rem;
+  margin: 0;
+  text-align: center;
+  align-self: start;
+  display: block;
+  /*min-height: 2.5rem;
+  text-align: center;
+  align-self: end;
+
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
+
 .plazo-card p {
   font-size: 1.125rem;
   font-family: "Roboto", sans-serif !important;
@@ -1500,6 +1518,13 @@ body {
   padding-top: 0;
   margin-top: 0;
 }
+
+/* Duración: queda en la 3ª fila, ya alineada entre tarjetas */
+.plazo-card .p-services-16 {
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
 .plazos-nota {
   margin-top: 2.5rem;
 }
