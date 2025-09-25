@@ -40,8 +40,13 @@ a {
   padding: 2.5rem 0 1.2rem 0;
   position: sticky;
   top: 0;
+  transition: transform 0.25s ease;
+  will-change: transform;
   z-index: 1000;
   border-bottom: 2px solid #fff;
+}
+.site-header.is-hidden {
+  transform: translateY(-100%); /* se va hacia arriba */
 }
 .header-inner {
   display: flex;
