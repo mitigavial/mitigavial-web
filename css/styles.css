@@ -916,9 +916,10 @@ a {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
   .promesa-grid-rect {
     grid-template-columns: 1fr;
-    border: none;
+    border: 1.5px solid #757575;
   }
   .promesa-grid-rect > .card {
     border-right: none;
@@ -1755,7 +1756,7 @@ body {
   .timeline-dot {
     width: 20px;
     height: 20px;
-    top: 60px;
+    left: 4rem;
   }
   .timeline-vertical {
     width: 6px;
@@ -1829,7 +1830,7 @@ body {
 @media (max-width: 900px) {
   .alcance-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 0.5rem;
   }
   .alcance-title {
     font-size: 24px;
@@ -1968,7 +1969,6 @@ body {
     min-height: unset;
   }
   .nosotros-text-bg {
-    padding: 2rem 1rem;
     align-items: center;
     text-align: center;
     height: auto;
@@ -1995,5 +1995,373 @@ body {
     max-width: 100%;
     font-size: 16px;
     padding: 0.5rem 1.2rem;
+  }
+}
+
+/* ================================
+   TIPOGRAFÍA RESPONSIVA (≤ 600px)
+   ================================ */
+@media (max-width: 600px) {
+  /* ====== INICIO ====== */
+  /* “Elaboramos Informes…” y “¿Tu proyecto…?” -> 18px */
+  .hero-subtitle,
+  .contact .contact-subtitle {
+    font-size: 18px;
+    line-height: 1.2;
+  } /* index.html */
+
+  .hero-content {
+    width: 80%;
+  }
+
+  /* “IMIV BÁSICOS” -> 28px */
+  .hero-title {
+    font-size: 28px;
+    line-height: 1.1;
+  } /* index.html */
+
+  /* Botones -> 18px */
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-grid,
+  .btn-form,
+  .faq-question,
+  .faq-cta p {
+    font-size: 16px;
+    max-width: 90% !important;
+  } /* index.html */
+
+  .btn-header {
+    font-size: 16px;
+    max-width: 65% !important;
+    align-items: center;
+  }
+
+  /* “¿Qué hacemos?” y “Contacto” -> 22px */
+  .about h2,
+  .contact h2 {
+    font-size: 22px;
+    line-height: 1.2;
+  } /* index.html */
+
+  /* Párrafos “Somos una consultora…”, beneficios y textos del formulario -> 16px */
+  .about p,
+  .card p,
+  .nosotros-text-bg p,
+  .promesa-grid-rect > .card p,
+  .nosotros-text-2,
+  .about .benefits li,
+  .contacto-info p,
+  .contact-form label,
+  .contact-form input,
+  .contact-form .form-message,
+  .faq-answer {
+    font-size: 16px !important;
+    line-height: 1.4;
+  } /* index.html */
+
+  /* Títulos “Servicios / Nosotros / FAQ” de las cards -> 20px */
+  .info-grid .card h3,
+  .faq-number {
+    font-size: 20px;
+  } /* index.html */
+
+  /* ====== NOSOTROS ====== */
+  /* “NOSOTROS” -> 22px */
+  .nosotros-title {
+    font-size: 22px;
+  } /* nosotros.html */
+
+  /* “Nuestra promesa” y “Como Trabajamos con tu Equipo” -> 22px */
+  .promesa h2,
+  .como-trabajamos h2 {
+    font-size: 22px;
+  } /* nosotros.html */
+
+  /* “Rigor técnico / Eficiencia / Acompañamiento” -> 18px */
+  .promesa .card h3 {
+    font-size: 18px;
+  } /* nosotros.html */
+
+  /* Párrafos (texto principal y bullets) -> 16px */
+  .nosotros-text,
+  .nosotros-text-2,
+  .work-item p {
+    font-size: 16px;
+    line-height: 1.3;
+  } /* nosotros.html */
+
+  /* Botones -> 18px (ya cubierto por .btn arriba) */
+
+  /* ====== SERVICIOS ====== */
+  /* “SERVICIOS” del hero -> 22px */
+  .hero-servicios h1 {
+    font-size: 22px;
+  } /* servicios.html */
+
+  /* “Cotiza tu IMIV en minutos” -> 18px */
+  .hero-content-servicios h3 {
+    font-size: 18px;
+  } /* servicios.html */
+
+  /* H2 de secciones (“¿Qué es…?”, “Plazos…”, “Metodología”, “Alcance…”) -> 22px */
+  .h2-titles {
+    font-size: 22px;
+  } /* servicios.html */
+
+  /* Números 1–4 -> 22px */
+  .timeline-circle {
+    font-size: 22px;
+  } /* servicios.html */
+
+  /* Subtítulos de las tarjetas (“Elaboración…”, etc.) -> 20px */
+  .subtitles-services {
+    font-size: 20px;
+  } /* servicios.html */
+
+  /* Textos descriptivos y notas -> 16px */
+  .que-es-desc,
+  .p-services,
+  .p-services-16,
+  .p-services-justify,
+  .plazos-nota p {
+    font-size: 16px;
+    line-height: 1.3;
+    text-align: justify;
+  } /* servicios.html */
+
+  /* Ítems de la lista de “Alcance estándar” -> 15px */
+  .alcance-list li,
+  .alcance-grid li,
+  .timeline-card p {
+    font-size: 15px;
+  } /* servicios.html */
+
+  /* time line */
+  /* =========================================================
+   METODOLOGÍA — Círculos centrados con la tarjeta (≤600px)
+   ========================================================= */
+  @media (max-width: 600px) {
+    /* Variables de layout en móvil */
+    .timeline-steps {
+      --col1: 56px; /* ancho de la columna del número */
+      --gap: 1.5rem; /* separación número ↔ tarjeta   */
+      --line-w: 4px; /* grosor de la línea vertical    */
+      --conn-len: 60px; /* largo del conector horizontal  */
+      --line-color: #0c3c60;
+    }
+
+    /* El contenedor general vuelve a ser bloque (no grid):
+     la línea vertical se mantiene como pseudo-elemento */
+    .timeline-steps {
+      position: relative;
+      display: block;
+    }
+    .timeline-steps::before {
+      content: "";
+      position: absolute;
+      left: calc(var(--col1) / 2);
+      top: 0;
+      bottom: 0;
+      width: var(--line-w);
+      background: var(--line-color);
+      border-radius: calc(var(--line-w) / 2);
+      z-index: 0;
+    }
+
+    /* Cada PASO se vuelve una mini-grid de 2 columnas:
+     [número] [tarjeta] y centramos en altura */
+    .timeline-step {
+      display: grid;
+      grid-template-columns: var(--col1) 1fr;
+      column-gap: var(--gap);
+      align-items: center; /* ← CENTRA círculo con la tarjeta */
+      margin-bottom: 28px; /* separación entre pasos */
+      position: relative;
+    }
+
+    /* NÚMERO: queda en la primera columna, centrado */
+    .timeline-circle {
+      grid-column: 1;
+      justify-self: center;
+      z-index: 1; /* por encima de la línea */
+    }
+
+    /* TARJETA: segunda columna, con conector horizontal centrado */
+    .timeline-card {
+      grid-column: 2;
+      position: relative;
+      padding: 14px;
+    }
+    .timeline-card::before {
+      /* conector horizontal */
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(-1 * var(--conn-len));
+      width: var(--conn-len);
+      height: var(--line-w);
+      background: var(--line-color);
+      border-radius: calc(var(--line-w) / 2);
+      z-index: 0;
+    }
+    .timeline-card::after {
+      /* puntos grises: tarjeta y línea */
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(-1 * (var(--node) / 2));
+      width: var(--node);
+      height: var(--node);
+      border-radius: 50%;
+      background: var(--node-color);
+      z-index: 1;
+      /* segundo punto sobre la línea, hacia la izquierda */
+      box-shadow: calc(-1 * var(--conn-len)) 0 0 0 var(--node-color);
+    }
+
+    /* Elementos de escritorio que ya no se usan en móvil */
+    .timeline-horizontal {
+      display: none !important;
+    }
+    .timeline-vertical {
+      display: none !important;
+    }
+
+    /* Ajuste tipográfico opcional */
+    .timeline-card h3 {
+      margin: 0 0 0.25rem;
+    }
+    .timeline-card p {
+      margin: 0.75rem 0 0;
+    }
+  }
+  /* FIN TIMELINE*/
+
+  /* ====== CONTACTO ====== */
+  /* “CONTACTO” -> 22px */
+  .intro-contacto h1 {
+    font-size: 22px;
+  } /* contacto.html */
+
+  /* “Horarios de Atención” y “¿Tienes un proyecto…?” -> 20px */
+  .contacto-info h2,
+  .contacto-form-title {
+    font-size: 20px;
+  } /* contacto.html */
+
+  /* Párrafos informativos y campos del formulario -> 16px */
+  .intro-contacto p,
+  .contacto-info p,
+  .contacto-info a,
+  .contacto-form label,
+  .contacto-form input,
+  .contacto-form button {
+    font-size: 16px;
+  } /* contacto.html */
+
+  /* ====== FAQ ====== */
+  /* “PREGUNTAS FRECUENTES” -> 22px */
+  .faq-hero h1 {
+    font-size: 22px;
+  } /* faq.html */
+}
+
+/* ==========================================
+   GUTTER GLOBAL EN MÓVIL (≤600px) — FORZADO
+   ========================================== */
+@media (max-width: 600px) {
+  :root {
+    --gutter-mobile: 24px;
+  } /* súbelo a 28px si quieres más margen */
+
+  /* APLICAR a casi todo el contenido dentro de <main> */
+  main .container,
+  main [class*="container"],
+  main .content,
+  main .section,
+  main section,
+  main > *:not(.full-bleed) {
+    padding-left: var(--gutter-mobile) !important;
+    padding-right: var(--gutter-mobile) !important;
+    box-sizing: border-box;
+  }
+
+  /* EXCEPCIONES: header y footer conservan su padding original */
+  .site-header .container,
+  .site-footer .container,
+  footer .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Si tienes secciones que deben ir a borde (full-bleed),
+     ponles la clase .full-bleed para NO agregarles extra padding */
+  .full-bleed {
+    padding-left: 16px !important; /* como tu header/footer */
+    padding-right: 16px !important;
+  }
+}
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+    margin: 0 auto;
+  }
+  /* Centra todo lo que sea bloque directo del main */
+  main > section,
+  main > div:not(.full-bleed) {
+    padding-left: var(--gutter-mobile) !important;
+    padding-right: var(--gutter-mobile) !important;
+  }
+}
+
+/* ==========================================
+            FAQ 
+   ========================================== */
+
+/* Centra todo lo que sea bloque directo del main */
+@media (max-width: 600px) {
+  .faq-item {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+/* ==========================================
+            SERVICIOS
+   ========================================== */
+
+@media (max-width: 600px) {
+  .plazo-card {
+    display: block; /* deja de ser grid */
+    /* o: display: flex;  si prefieres un layout flex en mobile */
+    /* y opcionalmente ajustas spacing */
+    gap: 0;
+  }
+}
+
+/* ==========================================
+            NOSOTROS
+   ========================================== */
+
+@media (max-width: 600px) {
+  .container {
+    display: block; /* deja de ser grid */
+    /* o: display: flex;  si prefieres un layout flex en mobile */
+    /* y opcionalmente ajustas spacing */
+    gap: 0;
+  }
+  .work-item img {
+    margin-bottom: 0;
+  }
+
+  .nosotros-text-2 {
+    margin-bottom: 2.5rem;
+  }
+
+  .promesa .card .h3 {
+    margin-bottom: 0;
   }
 }
