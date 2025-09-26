@@ -2602,3 +2602,179 @@ body {
     margin-bottom: 0;
   }
 }
+
+
+/* ==========================================
+            FOOTER
+   ========================================== */
+
+/* ===== Footer ≤600 px — logo|texto en fila arriba, Menú|Contacto abajo ===== */
+@media (max-width: 600px){
+  /* Grilla principal del footer (dos columnas) */
+  .site-footer .footer-grid{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-areas:
+      "brand brand"
+      "menu  contact"
+      "bottom bottom";
+    gap: 16px 20px;
+    width: 92%;
+    margin: 0 auto 24px;
+    align-items: start;
+    justify-items: start;
+  }
+
+  /* BRAND ocupa la fila superior completa y dentro arma logo | textos */
+  .site-footer .footer-brand{
+    grid-area: brand;
+    display: grid !important;                 /* anula flex previos */
+    grid-template-columns: auto 1fr;          /* ← logo | textos (MISMA LÍNEA) */
+    column-gap: 12px;
+    align-items: center;
+  }
+  /* reset de posiciones que pudieran tener !important en desktop */
+  .site-footer .footer-brand .footer-logo{
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: auto; margin: 0;
+  }
+  .site-footer .footer-brand .footer-text,
+  .site-footer .footer-brand h3,
+  .site-footer .footer-brand p{
+    grid-column: auto !important;
+    grid-row: auto !important;
+    margin: 0;
+    line-height: 1.25;
+    text-align: left;
+    white-space: normal;                      /* evita cortes raros */
+  }
+  .site-footer .footer-brand h3{ white-space: nowrap; } /* título en una línea */
+
+  /* Fila 2: Menú a la izquierda, Contacto a la derecha */
+  .site-footer .footer-menu{
+    grid-area: menu;
+    display: block !important;
+    margin: 0;
+    text-align: left;
+  }
+  .site-footer .footer-contact{
+    grid-area: contact;
+    display: block !important;
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Tipos/espaciados compactos */
+  .site-footer .footer-menu h4,
+  .site-footer .footer-contact h4{ margin: 6px 0 8px; font-size: 15px; }
+  .site-footer .footer-menu ul{ margin: 0; padding: 0; list-style: none; }
+  .site-footer .footer-menu li{ margin: 6px 0; }
+  .site-footer .footer-contact p{ margin: 6px 0; display: flex; align-items: center; }
+  .site-footer .footer-icon{ width: 18px; height: 18px; margin-right: 8px; }
+
+  /* Barra inferior centrada y a lo ancho */
+  .site-footer .footer-bottom{
+    grid-area: bottom;
+    text-align: center;
+    font-size: 13.5px;
+    padding-top: 10px;
+  }
+}
+
+
+
+
+
+/* ==========================================
+           RESPONSIVE <480
+   ========================================== */
+/* ===== Footer ≤480px — Contacto DEBAJO del Menú ===== */
+/* ===== Footer: columna única sin grid (≤600px) ===== */
+@media (max-width: 480px){
+  /* Contenedor principal del footer: TODO en columna y CENTRADO */
+  .site-footer .footer-grid{
+    display: flex !important;        /* sin grid */
+    flex-direction: column;
+    gap: 25px;
+    width: 92%;
+    margin: 0 auto 20px;
+    align-items: center;              /* centra horizontalmente a los hijos */
+    text-align: center;               /* centra el texto por defecto */
+  }
+
+  /* Orden de los bloques principales */
+  .site-footer .footer-brand   { order: 1; width: 100%; }
+  .site-footer .footer-menu    { order: 3; display: block !important; width: 100%; }
+  .site-footer .footer-contact { order: 4; display: block !important; width: 100%; }
+  .site-footer .footer-bottom  { order: 5; text-align: center; width: 100%; }
+
+  /* BRAND: logo arriba, textos debajo — CENTRADO */
+  .site-footer .footer-brand{
+    display: flex !important;       
+    flex-direction: column;
+    align-items: center;             /* ← centra logo y textos */
+    gap: 6px;
+  }
+  .site-footer .footer-brand .footer-logo{
+    order: 1;
+    height: auto;
+    margin: 0 0 6px 0;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  .site-footer .footer-brand .footer-text{
+    order: 2;
+    margin: 0;
+    line-height: 1.25;
+    text-align: center;              /* ← centra títulos del brand */
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  .site-footer .footer-brand h3,
+  .site-footer .footer-brand p{ margin: 0; text-align: center; }
+
+  /* Menú — CENTRADO */
+  .site-footer .footer-menu{
+    text-align: center;              /* títulos y enlaces centrados */
+  }
+  .site-footer .footer-menu h4{ margin: 6px 0 8px }
+  .site-footer .footer-menu ul{
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; /* ← centra li */
+    gap: 6px; 
+  }
+  .site-footer .footer-menu li{ margin: 0; }
+
+  /* Contacto — CENTRADO (icono + texto) */
+  .site-footer .footer-contact{
+    text-align: center;
+  }
+  .site-footer .footer-contact h4{ margin: 6px 0 8px;}
+  .site-footer .footer-contact p{
+    margin: 6px 0;
+    display: flex; justify-content: center; align-items: center; /* ← centra fila */
+    gap: 8px;                                   /* usa gap en lugar de margin-right */
+  }
+  .site-footer .footer-icon{ width: 18px; height: 18px; margin-right: 0; }
+
+    .site-footer .footer-brand{ align-items: center; }
+  .site-footer .footer-brand .footer-logo{
+    display:block; align-self:center; margin:0 auto 6px;
+  }
+  .site-footer .footer-brand .footer-text,
+  .site-footer .footer-brand h3,
+  .site-footer .footer-brand p{
+    text-align:center; margin-left:auto; margin-right:auto;
+  }
+
+  .footer-menu h4{ 
+    font-size:16px !important; }
+  .footer-contact a .footer-menu a {
+    font-size: 15px !important;
+}
+}
