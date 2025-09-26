@@ -60,6 +60,7 @@ a {
   gap: 1.5rem;
   height: 100%;
   margin-top: -0.8rem;
+  transform: translateY(-8px);
 }
 .header-title {
   font-family: "Montserrat", sans-serif !important;
@@ -127,29 +128,6 @@ a {
 }
 .nav-toggle {
   display: none;
-}
-@media (max-width: 900px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .site-nav {
-    align-items: center;
-  }
-  .site-nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  .header-logo {
-    height: 56px;
-  }
-  .btn-header {
-    font-size: 16px;
-    padding: 0.5rem 1.2rem;
-    width: 100%;
-    margin-top: 0.5rem;
-  }
 }
 
 /* ==== HERO ==== */
@@ -445,24 +423,6 @@ a {
   color: #fff;
   border: 2px solid #fff;
 }
-@media (max-width: 900px) {
-  .contacto-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .contacto-info,
-  .contacto-form {
-    border-radius: 0;
-    padding: 2rem 1rem;
-  }
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .contacto-form-title {
-    font-size: 22px;
-  }
-}
 
 /* ==== FOOTER ==== */
 .site-footer {
@@ -615,14 +575,6 @@ a {
 
 /* ==== RESPONSIVE ==== */
 
-@media (max-width: 900px) {
-  .footer-brand {
-    grid-template-columns: 1fr !important;
-    justify-items: center;
-    text-align: center;
-  }
-}
-
 /* ==== BUTTONS ==== */
 .btn {
   display: inline-block;
@@ -716,44 +668,6 @@ a {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   display: none;
-}
-
-/* ==== RESPONSIVE ==== */
-@media (max-width: 900px) {
-  .grid-3 {
-    grid-template-columns: 1fr;
-    border: none;
-  }
-  .card {
-    border-right: none;
-    min-height: unset;
-    padding: 2rem 1rem;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-  }
-  .footer-brand,
-  .footer-menu,
-  .footer-contact {
-    align-items: center;
-    justify-content: center;
-  }
-  .footer-logo {
-    margin: 0 auto 0.5rem auto;
-  }
-
-  .hero-title {
-    font-size: 28px;
-  }
-  .hero-subtitle {
-    font-size: 18px;
-  }
-  .about h2 {
-    font-size: 22px;
-  }
 }
 
 /* ==== NOSOTROS PAGE ==== */
@@ -910,49 +824,6 @@ a {
   margin-top: 2rem;
 }
 
-/* Responsive ajustes */
-@media (max-width: 900px) {
-  .intro-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .promesa-grid-rect {
-    grid-template-columns: 1fr;
-    border: 1.5px solid #757575;
-  }
-  .promesa-grid-rect > .card {
-    border-right: none;
-    border-bottom: 1.5px solid #757575;
-    min-height: 220px;
-    padding: 2rem 1.5rem;
-  }
-  .promesa-grid-rect > .card:last-child {
-    border-bottom: none;
-  }
-  .promesa h2 {
-    font-size: 28px;
-  }
-  .promesa-grid-rect > .card h3 {
-    font-size: 20px;
-  }
-  .promesa-grid-rect > .card p {
-    font-size: 15px;
-  }
-  .icon-promise {
-    width: 56px;
-    height: 56px;
-  }
-  .grid-4 {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 600px) {
-  .grid-4 {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ==== SERVICIOS PAGE ==== */
 
 /* Hero */
@@ -1083,21 +954,6 @@ a {
     padding: 0.5rem 1.2rem;
     min-width: 160px;
     max-width: 220px;
-  }
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .timeline {
-    grid-template-columns: 1fr 1fr;
-  }
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 600px) {
-  .timeline {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -1244,24 +1100,6 @@ a {
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
-}
-@media (max-width: 900px) {
-  .contacto-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .contacto-info,
-  .contacto-form {
-    border-radius: 0;
-    padding: 2rem 1rem;
-  }
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .contacto-form-title {
-    font-size: 22px;
-  }
 }
 
 /* ==== FAQ PAGE ==== */
@@ -1454,22 +1292,6 @@ body {
   transform: translateY(0); /* asegura que no haya desplazamientos previos */
 }
 
-@media (max-width: 900px) {
-  .que-es-title {
-    font-size: 24px;
-  }
-  .que-es-desc {
-    font-size: 16px;
-  }
-  .check-list li {
-    font-size: 16px;
-  }
-  .icon-check {
-    width: 26px;
-    height: 26px;
-  }
-}
-
 /* ==== PLAZOS SECTION ==== */
 .plazos-imiv {
   width: 100vw;
@@ -1574,31 +1396,6 @@ body {
   color: var(--blue-dark);
   max-width: 900px;
   margin: 0 auto;
-}
-@media (max-width: 900px) {
-  .plazos-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .plazo-icon {
-    width: 44px;
-    height: 44px;
-  }
-  .plazos-title {
-    font-size: 24px;
-  }
-  .plazos-desc {
-    font-size: 16px;
-  }
-  .plazo-card h3 {
-    font-size: 18px;
-  }
-  .plazo-card p {
-    font-size: 15px;
-  }
-  .plazos-justificado {
-    font-size: 15px;
-  }
 }
 
 /* ==== METODOLOGIA PAGE ==== */
@@ -1737,39 +1534,6 @@ body {
   min-height: 0;
   display: block;
 }
-@media (max-width: 900px) {
-  .timeline-steps {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .timeline-horizontal {
-    height: 8px;
-    top: 60px;
-    left: 0;
-    width: 100%;
-  }
-  .timeline-circle {
-    width: 38px;
-    height: 38px;
-    font-size: 18px;
-  }
-  .timeline-dot {
-    width: 20px;
-    height: 20px;
-    left: 4rem;
-  }
-  .timeline-vertical {
-    width: 6px;
-    height: 50px;
-    margin-top: 38px;
-  }
-  .timeline-card {
-    min-width: 180px;
-    max-width: 100%;
-    padding: 1rem 0.5rem;
-    height: auto;
-  }
-}
 
 /* ==== ALCANCE ESTANDAR PAGE ==== */
 .alcance-estandar {
@@ -1827,26 +1591,6 @@ body {
   flex-shrink: 0;
   display: block;
 }
-@media (max-width: 900px) {
-  .alcance-grid {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  .alcance-title {
-    font-size: 24px;
-  }
-  .alcance-desc {
-    font-size: 16px;
-  }
-  .alcance-list li {
-    font-size: 16px;
-    margin-bottom: 1.2rem;
-  }
-  .alcance-icon {
-    width: 28px;
-    height: 28px;
-  }
-}
 
 /* ==== LLAMADA A LA ACCIÓN ==== */
 .alcance-cta {
@@ -1878,14 +1622,7 @@ body {
   color: var(--white);
   border: 1px solid var(--blue-dark);
 }
-@media (max-width: 900px) {
-  .btn-cta {
-    font-size: 16px;
-    padding: 0.7rem 1rem;
-    min-width: 220px;
-    max-width: 100%;
-  }
-}
+
 .nosotros-hero {
   padding: 0;
   background: #fff;
@@ -1963,6 +1700,63 @@ body {
   color: var(--white);
   border: 1px solid var(--blue);
 }
+
+/* ================================
+  RESPONSIVA (> 601 ≤ 900px)
+   ================================ */
+
+@media (min-width: 601 px) and (max-width: 900px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .site-nav {
+    align-items: center;
+  }
+  .site-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .header-logo {
+    height: 56px;
+  }
+  .btn-header {
+    font-size: 16px;
+    padding: 0.5rem 1.2rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .brand {
+    display: flex; /* asegura flex en este breakpoint */
+    gap: 8px; /* ↓ antes estaba 1.5rem */
+    margin-top: 0; /* opcional: elimina el -0.8rem si levanta demasiado */
+    transform: translateY(-13px);
+  }
+
+  /* Por si el “espacio” viene de márgenes de los hijos */
+  .brand > * {
+    margin: 0;
+  }
+
+  /* A veces el hueco que se ve es el gap del contenedor que contiene a .brand */
+  .header-inner {
+    gap: 8px;
+  } /* reduce separación entre brand / nav / cta */
+
+  /* Opcional: ajustar tamaños para que todo calce como tu captura */
+  .header-logo {
+    height: 56px;
+  }
+  .header-title {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}
+
 @media (max-width: 900px) {
   .nosotros-grid {
     grid-template-columns: 1fr;
@@ -1984,12 +1778,7 @@ body {
     object-fit: cover;
     border-radius: 0 0 5px 5px;
   }
-  .nosotros-title {
-    font-size: 28px;
-  }
-  .nosotros-text-bg p {
-    font-size: 16px;
-  }
+
   .btn.btn-primary {
     min-width: 180px;
     max-width: 100%;
@@ -1998,8 +1787,457 @@ body {
   }
 }
 
+@media (max-width: 900px) {
+  .btn-cta {
+    font-size: 18px;
+    padding: 0.7rem 1rem;
+    min-width: 220px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .alcance-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .alcance-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .timeline-steps {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .timeline-horizontal {
+    height: 8px;
+    top: 60px;
+    left: 0;
+    width: 100%;
+  }
+  .timeline-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+  .timeline-dot {
+    width: 20px;
+    height: 20px;
+    left: 4rem;
+  }
+  .timeline-vertical {
+    width: 6px;
+    height: 50px;
+    margin-top: 38px;
+  }
+  .timeline-card {
+    min-width: 180px;
+    max-width: 100%;
+    padding: 1rem 0.5rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .plazos-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .plazo-icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 900px) {
+  .icon-check {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 900px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .contacto-info,
+  .contacto-form {
+    border-radius: 0;
+    padding: 2rem 1rem;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .contacto-info,
+  .contacto-form {
+    border-radius: 0;
+    padding: 2rem 1rem;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+}
+
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+    border: none;
+  }
+  .card {
+    border-right: none;
+    min-height: unset;
+    padding: 4rem 3.5rem;
+    border: 1px solid #e1e1e1 !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+}
+
+
+
+@media (max-width: 900px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .promesa-grid-rect {
+    grid-template-columns: 1fr;
+    border: 1.5px solid #757575;
+  }
+  .promesa-grid-rect > .card {
+    border-right: none;
+    border-bottom: 1.5px solid #757575;
+    min-height: 220px;
+    padding: 2rem 1.5rem;
+  }
+  .promesa-grid-rect > .card:last-child {
+    border-bottom: none;
+  }
+
+  .icon-promise {
+    width: 56px;
+    height: 56px;
+  }
+  .grid-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TAMAÑOS TIPOGRAFÍAS*/
+@media (min-width: 601px) and (max-width: 900px) {
+  /* ====== INICIO ====== */
+  /* “Elaboramos Informes…” y “¿Tu proyecto…?” -> 24px */
+  .hero-subtitle,
+  .contact .contact-subtitle {
+    font-size: 24px;
+    line-height: 1.2;
+  } /* index.html */
+
+  .hero-content {
+    width: 80%;
+  }
+
+  /* “IMIV BÁSICOS” -> 28px */
+  .hero-title {
+    font-size: 38px;
+    line-height: 1.2;
+  } /* index.html */
+
+  /* Botones -> 18px */
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-grid,
+  .btn-form,
+  .faq-question,
+  .faq-cta p {
+    font-size: 18px;
+    max-width: 90% !important;
+  } /* index.html */
+
+  .btn-header {
+    font-size: 16px;
+    max-width: 65% !important;
+    align-items: center;
+  }
+
+  /* “¿Qué hacemos?” y “Contacto” -> 26px */
+  .about h2,
+  .contact h2 {
+    font-size: 26px;
+    line-height: 1.2;
+  } /* index.html */
+
+  /* Párrafos “Somos una consultora…”, beneficios y textos del formulario -> 17px */
+  .about p,
+  .card p,
+  .nosotros-text-bg p,
+  .promesa-grid-rect > .card p,
+  .nosotros-text-2,
+  .about .benefits li,
+  .contacto-info p,
+  .contact-form label,
+  .contact-form input,
+  .contact-form .form-message,
+  .faq-answer {
+    font-size: 17px !important;
+    line-height: 1.4;
+  } /* index.html */
+
+  /* Títulos “Servicios / Nosotros / FAQ” de las cards -> 23px */
+  .info-grid .card h3,
+  .faq-number {
+    font-size: 23px;
+  } /* index.html */
+
+  /* ====== NOSOTROS ====== */
+  /* “NOSOTROS” -> 26px */
+  .nosotros-title {
+    font-size: 26px;
+  } /* nosotros.html */
+
+  /* “Nuestra promesa” y “Como Trabajamos con tu Equipo” -> 22px */
+  .promesa h2,
+  .como-trabajamos h2 {
+    font-size: 26px;
+  } /* nosotros.html */
+
+  /* “Rigor técnico / Eficiencia / Acompañamiento” -> 23px */
+  .promesa .card h3 {
+    font-size: 23px;
+  } /* nosotros.html */
+
+  /* Párrafos (texto principal y bullets) -> 16px */
+  .nosotros-text,
+  .nosotros-text-2,
+  .work-item p {
+    font-size: 17px;
+    line-height: 1.3;
+  } /* nosotros.html */
+
+  /* Botones -> 18px (ya cubierto por .btn arriba) */
+
+  /* ====== SERVICIOS ====== */
+  /* “SERVICIOS” del hero -> 26px */
+  .hero-servicios h1 {
+    font-size: 26px;
+  } /* servicios.html */
+
+  /* “Cotiza tu IMIV en minutos” -> 23px */
+  .hero-content-servicios h3 {
+    font-size: 23px;
+  } /* servicios.html */
+
+  /* H2 de secciones (“¿Qué es…?”, “Plazos…”, “Metodología”, “Alcance…”) -> 26px */
+  .h2-titles {
+    font-size: 26px;
+  } /* servicios.html */
+
+  /* Números 1–4 -> 26px */
+  .timeline-circle {
+    font-size: 26px;
+  } /* servicios.html */
+
+  /* Subtítulos de las tarjetas (“Elaboración…”, etc.) -> 23px */
+  .subtitles-services {
+    font-size: 23px;
+  } /* servicios.html */
+
+  /* Textos descriptivos y notas -> 16px */
+  .que-es-desc,
+  .p-services,
+  .p-services-16,
+  .p-services-justify,
+  .plazos-nota p {
+    font-size: 17px;
+    line-height: 1.3;
+    text-align: justify;
+  } /* servicios.html */
+
+  /* Ítems de la lista de “Alcance estándar” -> 16px */
+  .alcance-list li,
+  .alcance-grid li,
+  .timeline-card p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-title {
+    font-size: 18px;
+  }
+
+  .site-nav a {
+    color: #fff;
+    font-weight: 700; /* para el “Inicio” activo, ajusta si usas .active */
+    text-decoration: none;
+    font-size: 15.5px; /* ↓ tamaño de letra en este rango */
+    letter-spacing: 0.1px; /* ↓ espaciado entre letras en este rango */
+    padding: 6px 2px !important;
+  }
+}
+
+/* arreglo FOOTER*/
+
+/* ≤900px: en .footer-brand el logo arriba y los textos debajo */
+@media (max-width: 900px){
+  .site-footer .footer-brand{
+    display: flex !important;        /* anula el grid anterior */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
+  /* resetear posiciones forzadas por grid */
+  .site-footer .footer-brand .footer-logo{
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 160px;                    /* opcional: ajusta tamaño del logo */
+    margin: 0 0 .5rem 0;
+  }
+  .site-footer .footer-brand .footer-text{
+    grid-column: auto !important;
+    grid-row: auto !important;
+    margin: 0;
+    text-align: left;
+  }
+
+  /* ≤900px: en .footer-brand el logo arriba y los textos debajo */
+@media (max-width: 900px){
+  .site-footer .footer-brand{
+    display: flex !important;        /* anula el grid anterior */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
+  /* resetear posiciones forzadas por grid */
+  .site-footer .footer-brand .footer-logo{
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 160px;                    /* opcional: ajusta tamaño del logo */
+    margin: 0 0 .5rem 0;
+    transform: translateY(-13px)
+  }
+  .site-footer .footer-brand .footer-text{
+    grid-column: auto !important;
+    grid-row: auto !important;
+    margin: 0;
+    text-align: left;
+  }
+}
+.footer-contact p { 
+  font-size: 15.5px;
+}
+
+.footer-brand h3 { 
+  font-size: 18px;
+}
+}
+
+
+
 /* ================================
-   TIPOGRAFÍA RESPONSIVA (≤ 600px)
+   RESPONSIVA (> 601px) (>769px)
+   ================================ */
+/* 601–769 px — brand izq, CTA der; menú ocupa TODA la fila inferior */
+@media (min-width: 601px) and (max-width: 775px) {
+  .header-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 16px;
+    position: relative; /* ancla para el CTA absoluto */
+  }
+
+  /* nav ocupa TODO el ancho en la fila de abajo */
+  .site-nav {
+    grid-column: 1 / -1; /* ← clave: toda la fila */
+    grid-row: 2;
+  }
+
+  /* UL a lo ancho y repartido */
+  .site-nav ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 8px;
+  }
+  .site-nav ul li {
+    flex: 1 1 0;
+    text-align: center;
+  }
+  .site-nav a {
+    display: block;
+    padding: 6px 0;
+  }
+
+  /* CTA (que está dentro del nav) “sube” visualmente a la fila superior */
+  .site-nav .btn-header {
+    position: absolute; /* ← lo sacamos del flujo del nav */
+    top: 0;
+    right: 0; /* esquina sup. derecha del header */
+    margin: 0;
+    transform: translateY(6px); /* ajusta fino si hace falta */
+    z-index: 2;
+    min-width: 180px;
+    padding: 10px 16px;
+    border-radius: 8px;
+  }
+
+  /* Ajuste del brand si hace falta */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transform: translateY(-1px);
+  }
+}
+
+/* ================================
+   RESPONSIVA (≤ 600px)
    ================================ */
 @media (max-width: 600px) {
   /* ====== INICIO ====== */
@@ -2138,7 +2376,6 @@ body {
     font-size: 15px;
   } /* servicios.html */
 
-  /* time line */
   /* =========================================================
    METODOLOGÍA — Círculos centrados con la tarjeta (≤600px)
    ========================================================= */
