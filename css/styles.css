@@ -1705,7 +1705,7 @@ body {
   RESPONSIVA (> 601 ≤ 900px)
    ================================ */
 
-@media (min-width: 601 px) and (max-width: 900px) {
+@media (min-width: 601px) and (max-width: 900px) {
   .header-inner {
     flex-direction: column;
     gap: 1rem;
@@ -1904,8 +1904,6 @@ body {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-}
-
 }
 
 @media (max-width: 900px) {
