@@ -939,6 +939,33 @@ a {
   color: var(--blue);
   border: 1px solid var(--blue);
 }
+
+/* ==== CONTACTO PAGE ==========
+    900 px a 1144 px
+===============================*/
+
+/* Igualar ALTO de las tarjetas de Metodología entre 1130px y 1143px */
+@media (min-width: 900px) and (max-width: 1143px) {
+  /* El contenedor de pasos debe estirar a todos sus hijos */
+  .timeline-steps {
+    align-items: stretch; /* grid track uniform */
+  }
+
+  /* Cada paso deja de centrar y permite que la tarjeta se estire */
+  .timeline-step {
+    align-items: stretch; /* antes estaba center */
+    /* si ves que no alcanza, puedes sumar: min-height: 100%; */
+  }
+
+  /* La tarjeta ocupa todo el alto disponible del paso */
+  .timeline-card {
+    height: 100%;
+    flex: 1 1 auto; /* en el layout flex de .timeline-step */
+    /* opcional: quita el límite de ancho si te comprime contenido */
+    /* max-width: none; */
+  }
+}
+
 @media (max-width: 900px) {
   .hero-content-servicios h1 {
     font-size: 28px;
@@ -1819,7 +1846,7 @@ body {
   .btn.btn-primary {
     min-width: 180px;
     max-width: 100%;
-    font-size: 16px;
+    font-size: 18px;
     padding: 0.5rem 1.2rem;
   }
 }
