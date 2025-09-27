@@ -2493,8 +2493,9 @@ body {
       content: "";
       position: absolute;
       left: calc(var(--col1) / 2);
-      top: 0;
-      bottom: 0;
+      top: 80px; /* Ajustado para que inicie exactamente en el centro del círculo 1 */
+      bottom: auto;
+      height: 620px; /* Altura generosa para llegar al círculo 4 */
       width: var(--line-w);
       background: var(--line-color);
       border-radius: calc(var(--line-w) / 2);
