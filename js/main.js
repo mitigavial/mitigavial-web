@@ -48,65 +48,63 @@
 /* =======================
    NAV móvil (toggle)
    ======================= */
+/* =======================
+   NAV móvil (toggle)
+   ======================= */
 (() => {
   const navToggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector("#nav");
   if (!navToggle || !nav) return;
 
-  // Función para actualizar el icono del botón
   const setIcon = (open) => {
     navToggle.innerHTML = open ? "✕" : "☰";
     navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
     navToggle.setAttribute("aria-expanded", open ? "true" : "false");
   };
 
-  // Inicializar el icono
+  // 👉 función única para abrir/cerrar (incluye overlay y lock scroll)
+  const setOpen = (open) => {
+    nav.classList.toggle("open", open);
+    setIcon(open);
+    document.body.style.overflow = open ? "hidden" : "";
+    document.body.classList.toggle("menu-open", open); // <— opacidad del fondo
+  };
+
+  // Estado inicial del icono
   setIcon(nav.classList.contains("open"));
 
-  // Toggle al hacer click
+  // Toggle al click
   navToggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    setIcon(open);
-    // Bloquear scroll del body cuando el menú está abierto
-    document.body.style.overflow = open ? "hidden" : "";
+    setOpen(!nav.classList.contains("open"));
   });
 
-  // Cerrar con tecla ESC
+  // Cerrar con ESC
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && nav.classList.contains("open")) {
-      nav.classList.remove("open");
-      setIcon(false);
-      document.body.style.overflow = "";
+      setOpen(false);
     }
   });
 
   // Cerrar al hacer click en un enlace del menú
-  const navLinks = nav.querySelectorAll("a");
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-      setIcon(false);
-      document.body.style.overflow = "";
-    });
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
   });
 
-  // Cerrar al hacer click en el botón X (pseudo-elemento)
+  // Cerrar al clickear la "X" dibujada en la esquina (tu lógica existente)
   nav.addEventListener("click", (e) => {
-    // Verificar si el click fue en el área del botón X (esquina superior derecha)
     const rect = nav.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
     const clickY = e.clientY - rect.top;
-    
-    // Área del botón X: esquina superior derecha (20px desde arriba y derecha)
     const buttonSize = 30;
     const buttonX = rect.width - 20 - buttonSize;
     const buttonY = 20;
-    
-    if (clickX >= buttonX && clickX <= buttonX + buttonSize && 
-        clickY >= buttonY && clickY <= buttonY + buttonSize) {
-      nav.classList.remove("open");
-      setIcon(false);
-      document.body.style.overflow = "";
+    if (
+      clickX >= buttonX &&
+      clickX <= buttonX + buttonSize &&
+      clickY >= buttonY &&
+      clickY <= buttonY + buttonSize
+    ) {
+      setOpen(false);
     }
   });
 })();
@@ -145,4 +143,3 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
   });
 });
-
