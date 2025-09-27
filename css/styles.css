@@ -2314,7 +2314,7 @@ body {
     top: 0;
     right: 0; /* esquina sup. derecha del header */
     margin: 0;
-    transform: translateY(6px); /* ajusta fino si hace falta */
+    transform: translateY(16px); /* ajusta fino si hace falta */
     z-index: 2;
     max-width: 300px;
     padding: 10px 16px;
