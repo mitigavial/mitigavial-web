@@ -1787,9 +1787,7 @@ body {
   } /* reduce separación entre brand / nav / cta */
 
   /* Opcional: ajustar tamaños para que todo calce como tu captura */
-  .header-logo {
-    /*height: 56px;*/
-  }
+
   .header-title {
     font-size: 16px;
     line-height: 1.2;
@@ -1879,6 +1877,7 @@ body {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+
   .timeline-horizontal {
     height: 8px;
     top: 60px;
@@ -2766,12 +2765,12 @@ body {
   .site-footer,
   .footer-contact a {
     margin: 6px 0 8px;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .footer-menu h4,
   .footer-contact h4 {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .site-footer .footer-menu ul {
@@ -2797,7 +2796,7 @@ body {
   .site-footer .footer-bottom {
     grid-area: bottom;
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
     padding-top: 10px;
   }
 }
@@ -2838,20 +2837,19 @@ body {
     transform: translateY(-70px);
   }
 
-  /* CTA: solo absoluto en móvil (como ya querías) */
   .site-nav .btn-header {
     position: absolute;
-    left: 4%;
-    right: 4%;
-    bottom: 10px;
-    width: auto;
+    left: 50%;
+    bottom: 12px; /* ajusta altura si quieres */
+    transform: translateX(-50%); /* ← centro real */
+    width: clamp(220px, 80vw, 360px); /* ancho fluido */
+    max-width: calc(100% - 32px); /* respeta márgenes laterales */
     margin: 0;
     text-align: center;
     padding: 12px 14px;
     border-radius: 10px;
     z-index: 11;
   }
-
   /* Menú sandwich: oculto cerrado, visible en el panel abierto */
   .site-nav ul {
     display: none;
