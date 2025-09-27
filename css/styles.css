@@ -2963,9 +2963,12 @@ body {
   body.menu-open::before {
     content: "";
     position: fixed;
-    inset: 0; /* top/right/bottom/left: 0 */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: calc(100vw - min(78vw, 340px)); /* Cubre el área no ocupada por el menú */
     background: rgba(0, 0, 0, 0.65); /* oscuridad */
-    z-index: 999; /* debajo del panel, encima del contenido */
+    z-index: 1001; /* por encima del header, debajo del panel */
     opacity: 1;
     pointer-events: auto; /* bloquea clics al fondo */
     transition: opacity 0.2s ease;
@@ -2983,15 +2986,19 @@ body {
   .site-nav.open {
     z-index: 1000;
   }
+
 }
 
 @media (max-width: 550px) {
   body.menu-open::before {
     content: "";
     position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.75);
-    z-index: 999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: calc(100vw - min(78vw, 340px)); /* Cubre el área no ocupada por el menú */
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1001; /* por encima del header, debajo del panel */
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0.2s;
@@ -3007,6 +3014,7 @@ body {
   .site-nav.open {
     z-index: 1000;
   }
+
 }
 
 /* ==========================================
