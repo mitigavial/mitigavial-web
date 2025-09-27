@@ -53,8 +53,61 @@
   const nav = document.querySelector("#nav");
   if (!navToggle || !nav) return;
 
+  // Función para actualizar el icono del botón
+  const setIcon = (open) => {
+    navToggle.innerHTML = open ? "✕" : "☰";
+    navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+
+  // Inicializar el icono
+  setIcon(nav.classList.contains("open"));
+
+  // Toggle al hacer click
   navToggle.addEventListener("click", () => {
-    nav.classList.toggle("open"); // esta clase es la que chequea el header
+    const open = nav.classList.toggle("open");
+    setIcon(open);
+    // Bloquear scroll del body cuando el menú está abierto
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+
+  // Cerrar con tecla ESC
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("open")) {
+      nav.classList.remove("open");
+      setIcon(false);
+      document.body.style.overflow = "";
+    }
+  });
+
+  // Cerrar al hacer click en un enlace del menú
+  const navLinks = nav.querySelectorAll("a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      setIcon(false);
+      document.body.style.overflow = "";
+    });
+  });
+
+  // Cerrar al hacer click en el botón X (pseudo-elemento)
+  nav.addEventListener("click", (e) => {
+    // Verificar si el click fue en el área del botón X (esquina superior derecha)
+    const rect = nav.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickY = e.clientY - rect.top;
+    
+    // Área del botón X: esquina superior derecha (20px desde arriba y derecha)
+    const buttonSize = 30;
+    const buttonX = rect.width - 20 - buttonSize;
+    const buttonY = 20;
+    
+    if (clickX >= buttonX && clickX <= buttonX + buttonSize && 
+        clickY >= buttonY && clickY <= buttonY + buttonSize) {
+      nav.classList.remove("open");
+      setIcon(false);
+      document.body.style.overflow = "";
+    }
   });
 })();
 
@@ -93,36 +146,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* =======================
-   X para cerrar nav toggle
-   ======================= */
-(() => {
-  const btn = document.querySelector(".nav-toggle");
-  const nav = document.querySelector("#nav");
-  if (!btn || !nav) return;
-
-  // Inicial
-  const setIcon = (open) => {
-    btn.innerHTML = open ? "✕" : "☰";
-    btn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-  };
-  setIcon(nav.classList.contains("open"));
-
-  // Toggle al click
-  btn.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    setIcon(open);
-    // (opcional) bloquear scroll al abrir:
-    document.body.style.overflow = open ? "hidden" : "";
-  });
-
-  // Cerrar con ESC
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && nav.classList.contains("open")) {
-      nav.classList.remove("open");
-      setIcon(false);
-      document.body.style.overflow = "";
-    }
-  });
-})();

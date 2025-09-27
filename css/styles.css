@@ -1433,21 +1433,22 @@ body {
 .timeline-horizontal {
   position: absolute;
   top: 86px;
-  left: calc(12.5% - 12px);
-  width: calc(75% + 24px);
+  left: 0;
+  right: 0;
   height: 12px;
   background: #0c3c60;
   border-radius: 6px;
   z-index: 1;
+  margin: 0 1rem;
 }
 .timeline-steps {
   display: grid;
-  /*grid-template-columns: repeat(4, 1fr); */
-  grid-template-columns: repeat(4, 16.25rem);
-  column-gap: 2rem;
-  justify-content: space-between;
-  /*position: relative;
-  z-index: 2; */
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  margin: 0 auto;
 }
 .timeline-step {
   display: flex;
@@ -1499,9 +1500,11 @@ body {
   border: 1px solid #0c3c60;
   color: #0c3c60;
   padding: 1.5rem 1rem;
-  width: 16.25rem;
+  width: 100%;
+  max-width: 280px;
   min-height: 11rem;
   height: auto;
+  margin: 0 auto;
   border-radius: 4px;
   box-shadow: 0 1px 1px #f7f7f7;
   text-align: center;
@@ -1808,7 +1811,34 @@ body {
   }
 }
 
-@media (max-width: 900px) {
+/* Ajuste específico para 600-675px */
+@media (min-width: 600px) and (max-width: 675px) {
+  .timeline-steps {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 0.8rem;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+  }
+  .timeline-horizontal {
+    left: 0.5rem;
+    right: 0.5rem;
+    margin: 0;
+  }
+  .timeline-card {
+    max-width: 100%;
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  .timeline-card h3 {
+    font-size: 1.1rem;
+  }
+  .timeline-card p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
   .timeline-steps {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -2377,7 +2407,7 @@ body {
   /* =========================================================
    METODOLOGÍA — Círculos centrados con la tarjeta (≤600px)
    ========================================================= */
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     /* Variables de layout en móvil */
     .timeline-steps {
       --col1: 56px; /* ancho de la columna del número */
@@ -2735,20 +2765,70 @@ body {
     top: 0; right: 0; bottom: 0;
     width: 78vw; max-width: 340px; height: 100vh;
     background: #072136;
-    padding: 18px 18px 24px;
+    padding: 0;
     z-index: 1000;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
+
+  /* Botón de cerrar en esquina superior derecha */
+  .site-nav.open::before {
+    content: "✕";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  .site-nav.open::before:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Lista de navegación centrada */
   .site-nav.open ul{
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin: 10px 0 80px;
-    padding: 0;
+    gap: 20px;
+    margin: 80px auto 40px;
+    padding: 0 20px;
     list-style: none;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
   }
+
+  /* Enlaces del menú */
+  .site-nav.open ul li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+    min-width: 120px;
+  }
+  .site-nav.open ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Ocultar botón CTA en el menú móvil */
   .site-nav.open .btn-header{
-    position: absolute; left: 18px; right: 18px; bottom: 18px; top: auto;
+    display: none;
   }
 
 
