@@ -92,3 +92,37 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
   });
 });
+
+/* =======================
+   X para cerrar nav toggle
+   ======================= */
+(() => {
+  const btn = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("#nav");
+  if (!btn || !nav) return;
+
+  // Inicial
+  const setIcon = (open) => {
+    btn.innerHTML = open ? "✕" : "☰";
+    btn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+  setIcon(nav.classList.contains("open"));
+
+  // Toggle al click
+  btn.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    setIcon(open);
+    // (opcional) bloquear scroll al abrir:
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+
+  // Cerrar con ESC
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("open")) {
+      nav.classList.remove("open");
+      setIcon(false);
+      document.body.style.overflow = "";
+    }
+  });
+})();

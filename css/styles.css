@@ -2379,7 +2379,7 @@ body {
   /* =========================================================
    METODOLOGÍA — Círculos centrados con la tarjeta (≤600px)
    ========================================================= */
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     /* Variables de layout en móvil */
     .timeline-steps {
       --col1: 56px; /* ancho de la columna del número */
@@ -2683,6 +2683,78 @@ body {
 }
 
 
+/* ==========================================
+           RESPONSIVE <550
+   ========================================== */
+@media (max-width: 550px){
+  /* deja espacio para el CTA dentro del header si lo necesitas */
+  .site-header .container{ width: 92%; }
+
+  /* 2 columnas: [brand] | [toggle] */
+  .header-inner{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;              /* alinea verticalmente brand y toggle */
+    column-gap: 12px;
+    position: relative;               /* ancla para el CTA absoluto */
+  }
+
+  /* botón hamburguesa: a la derecha, sin trucos */
+  .nav-toggle{
+    grid-column: 2;                   /* col derecha */
+    justify-self: end;                /* pegado al borde del container */
+    align-self: center;               /* centrado en la fila */
+    display: inline-block !important;
+    font-size: 28px;
+    line-height: 1;
+    color: #fff;
+    background: transparent;
+    border: 0;
+    padding: 4px 6px;
+    cursor: pointer;
+    /* IMPORTANTE: sin translate ni position absoluto aquí */
+    position: static;
+    transform: translateY(-70px);
+  }
+
+  /* CTA: solo absoluto en móvil (como ya querías) */
+  .site-nav .btn-header{
+    position: absolute;
+    left: 4%; right: 4%;
+    bottom: 10px;
+    width: auto;
+    margin: 0;
+    text-align: center;
+    padding: 12px 14px;
+    border-radius: 10px;
+    z-index: 11;
+  }
+
+  /* Menú sandwich: oculto cerrado, visible en el panel abierto */
+  .site-nav ul{ display: none; }
+  .site-nav.open{
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 78vw; max-width: 340px; height: 100vh;
+    background: #072136;
+    padding: 18px 18px 24px;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  .site-nav.open ul{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 10px 0 80px;
+    padding: 0;
+    list-style: none;
+  }
+  .site-nav.open .btn-header{
+    position: absolute; left: 18px; right: 18px; bottom: 18px; top: auto;
+  }
+
+
+}
 
 
 
