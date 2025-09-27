@@ -11,22 +11,28 @@
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="brand">
-          <img src="assets/logo.svg" alt="Logo MitigaVial Consultora" />
+          <img
+            src="assets/Logo.png"
+            alt="Logo MitigaVial Consultora"
+            class="header-logo"
+          />
+          <span class="header-title">MITIGAVIAL<br />CONSULTORA</span>
         </a>
         <nav class="site-nav" id="nav">
           <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html" class="active">Inicio</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="contacto.html" class="active">Contacto</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
+          <a href="#contacto" class="btn btn-header">Cotiza tu IMIV</a>
         </nav>
-        <a href="contacto.html" class="btn btn-header">Cotiza tu IMIV</a>
         <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
       </div>
     </header>
 
+    <!-- FINAL HEADER -->
     <main>
       <!-- INTRO -->
       <section class="intro-contacto">
@@ -110,28 +116,32 @@
                 <input type="text" id="asunto" name="asunto" required />
                 <span class="input-underline"></span>
               </div>
-              <button type="submit" class="btn btn-form" id="button">Enviar</button>
+              <button type="submit" class="btn btn-form" id="button">
+                Enviar
+              </button>
             </form>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FINAL FOOTER -->
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
           <img
-            src="assets/logo.svg"
+            src="assets/Logo.png"
             alt="Logo MitigaVial"
             class="footer-logo"
           />
-          <h3>MITIGAVIAL CONSULTORA</h3>
-          <p>Especialistas en IMIV</p>
+          <div class="footer-text">
+            <h3>MITIGAVIAL CONSULTORA</h3>
+            <p class="footer-description">Especialistas en IMIV</p>
+          </div>
         </div>
         <nav class="footer-menu" aria-label="Menú del sitio">
           <h4>Menú</h4>
-          <ul>
+          <ul class="footer-navs">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="servicios.html">Servicios</a></li>
@@ -141,27 +151,44 @@
         </nav>
         <div class="footer-contact">
           <h4>Contacto</h4>
-          <p><a href="#">MitigaVial Consultora</a></p>
           <p>
+            <img src="assets/Linkedin.png" alt="LinkedIn" class="footer-icon" />
+            <a
+              href="https://www.linkedin.com/in/mitigavial-consultora-597681381/"
+              target="_blank"
+              >MitigaVial Consultora</a
+            >
+          </p>
+          <p>
+            <img src="assets/mail_footer.svg" alt="Email" class="footer-icon" />
             <a href="mailto:mitigavial.consultora@gmail.com"
               >mitigavial.consultora@gmail.com</a
             >
           </p>
-          <p>Concepción, Chile</p>
+          <p>
+            <img
+              src="assets/location_footer.svg"
+              alt="Ubicación"
+              class="footer-icon"
+            />
+            Concepción, Chile
+          </p>
         </div>
       </div>
       <div class="footer-bottom">
-        <a href="#">Política de privacidad</a>
-        <p>© 2025 Todos los derechos reservados para Mitiga Vial Consultora</p>
+        <p>Política de privacidad</p>
+        <p>© 2025 Todos los derechos reservados para MitigaVial Consultora</p>
       </div>
     </footer>
-
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <script type="text/javascript">
-      emailjs.init('AHLw024NXuuC5l2CH')
+      emailjs.init("AHLw024NXuuC5l2CH");
     </script>
-    
+
     <script src="js/main.js"></script>
   </body>
 </html>
