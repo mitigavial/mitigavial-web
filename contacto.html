@@ -110,7 +110,7 @@
                 <input type="text" id="asunto" name="asunto" required />
                 <span class="input-underline"></span>
               </div>
-              <button type="submit" class="btn btn-form">Enviar</button>
+              <button type="submit" class="btn btn-form" id="button">Enviar</button>
             </form>
           </div>
         </div>
@@ -156,6 +156,12 @@
       </div>
     </footer>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      emailjs.init('AHLw024NXuuC5l2CH')
+    </script>
+    
     <script src="js/main.js"></script>
   </body>
 </html>

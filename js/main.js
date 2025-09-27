@@ -128,18 +128,75 @@
 })();
 
 /* =======================
-   Formulario (página Contacto)
+   Formulario (página Contacto) - EmailJS
    ======================= */
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formContacto");
-  const mensaje = document.getElementById("mensajeConfirmacion");
-  if (!form || !mensaje) return;
+  const btn = document.getElementById("button");
+  
+  if (!form || !btn) return;
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    mensaje.textContent =
-      "¡Gracias! Recibimos tu consulta. Te contactaremos dentro de las próximas 24 horas.";
-    mensaje.style.display = "block";
-    form.reset();
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Cambiar estado del botón
+    btn.value = 'Enviando...';
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    // Configuración de EmailJS
+    const serviceID = 'default_service';
+    const templateID = 'template_f1dp3y9';
+
+    // Enviar email
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        // Éxito
+        btn.value = 'Enviar';
+        btn.textContent = 'Enviar';
+        btn.disabled = false;
+        
+        // Mostrar mensaje de éxito
+        showMessage('¡Gracias! Recibimos tu consulta. Te contactaremos prontamente.', 'success');
+        form.reset();
+      }, (err) => {
+        // Error
+        btn.value = 'Enviar';
+        btn.textContent = 'Enviar';
+        btn.disabled = false;
+        
+        console.error('Error al enviar email:', err);
+        showMessage('Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.', 'error');
+      });
   });
+
+  // Función para mostrar mensajes
+  function showMessage(text, type) {
+    // Crear elemento de mensaje si no existe
+    let messageEl = document.getElementById('mensajeConfirmacion');
+    if (!messageEl) {
+      messageEl = document.createElement('div');
+      messageEl.id = 'mensajeConfirmacion';
+      messageEl.style.cssText = `
+        margin-top: 1.5rem;
+        text-align: center;
+        font-size: 1.125rem;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        padding: 1rem;
+        border-radius: 5px;
+        display: none;
+      `;
+      form.appendChild(messageEl);
+    }
+
+    messageEl.textContent = text;
+    messageEl.style.display = 'block';
+    messageEl.style.color = type === 'success' ? '#22c55e' : '#ef4444';
+    messageEl.style.backgroundColor = type === 'success' ? '#f0fdf4' : '#fef2f2';
+    messageEl.style.border = `1px solid ${type === 'success' ? '#22c55e' : '#ef4444'}`;
+
+    // Scroll hacia el mensaje
+    messageEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 });
