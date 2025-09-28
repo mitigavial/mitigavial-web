@@ -110,22 +110,71 @@
 })();
 
 /* =======================
-   Formularios (home)
+   Formularios (home) - EmailJS
    ======================= */
-(() => {
-  const f = document.getElementById("contact-form");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
   const msg = document.getElementById("form-message");
-  if (!f || !msg) return;
+  if (!form || !msg) return;
 
-  f.addEventListener("submit", (e) => {
-    e.preventDefault();
-    msg.textContent =
-      "¡Gracias! Recibimos tu consulta. Te contactaremos dentro de las próximas 24 horas.";
-    msg.style.display = "block";
-    msg.style.color = "#22c55e";
-    f.reset();
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Cambiar estado del botón
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    // Configuración de EmailJS
+    const serviceID = 'default_service';
+    const templateID = 'template_f1dp3y9';
+
+    // Enviar email
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        // Éxito
+        btn.textContent = originalText;
+        btn.disabled = false;
+        showMessageIndex('¡Gracias! Recibimos tu consulta. Te contactaremos dentro de las próximas 24 horas.', 'success');
+        form.reset();
+      }, (err) => {
+        // Error
+        btn.textContent = originalText;
+        btn.disabled = false;
+        console.error('Error al enviar email:', err);
+        showMessageIndex('Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.', 'error');
+      });
   });
-})();
+
+  // Función para mostrar mensajes (versión para index)
+  function showMessageIndex(text, type) {
+    msg.textContent = text;
+    msg.style.display = 'block';
+    msg.style.color = type === 'success' ? '#0C3C60' : '#ef4444';
+    msg.style.backgroundColor = type === 'success' ? '#ffffff' : '#fef2f2';
+    msg.style.border = `1px solid ${type === 'success' ? '#ffffff' : '#ef4444'}`;
+    msg.style.padding = '2rem 3rem';
+    msg.style.borderRadius = '8px';
+    msg.style.fontSize = '2rem';
+    msg.style.fontFamily = '"Roboto", sans-serif';
+    msg.style.lineHeight = '1.2';
+    msg.style.fontWeight = 'bold';
+    msg.style.textAlign = 'center';
+    msg.style.marginTop = '1.5rem';
+    msg.style.maxWidth = '600px';
+    msg.style.marginLeft = 'auto';
+    msg.style.marginRight = 'auto';
+    
+    // Scroll hacia el mensaje
+    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Ocultar el mensaje automáticamente después de 5 segundos
+    setTimeout(() => {
+      msg.style.display = 'none';
+    }, 5000);
+  }
+});
 
 /* =======================
    Formulario (página Contacto) - EmailJS
