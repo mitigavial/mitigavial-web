@@ -2107,7 +2107,8 @@ body {
   .contact-form label,
   .contact-form input,
   .contact-form .form-message,
-  .faq-answer {
+  .faq-answer,
+  .info-contacto p {
     font-size: 17px !important;
     line-height: 1.4;
   } /* index.html */
@@ -2120,7 +2121,9 @@ body {
 
   /* ====== NOSOTROS ====== */
   /* “NOSOTROS” -> 26px */
-  .nosotros-title {
+  .nosotros-title,
+  .intro-contacto h1,
+  .faq-hero h1 {
     font-size: 26px;
   } /* nosotros.html */
 
@@ -2214,6 +2217,15 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px 32px;
     align-items: start;
+  }
+
+  .intro-contacto h2 {
+    font-size: 17px;
+  }
+
+  .contacto-info h2,
+  .contacto-form-title {
+    font-size: 26px;
   }
 
   /* Colocación */
