@@ -967,6 +967,12 @@ a {
 }
 
 @media (max-width: 900px) {
+  /* Agregar márgenes al contenido de texto */
+  .hero-content-servicios {
+    padding: 0 2rem;
+    margin: 0 auto;
+  }
+  
   .hero-content-servicios h1 {
     font-size: 28px;
   }
@@ -1146,7 +1152,7 @@ body {
 /* Hero */
 .faq-hero {
   text-align: center;
-  padding: 2rem 0;
+  padding: 4rem 0 0 0;
   background-color: var(--gris);
 }
 
@@ -1662,7 +1668,7 @@ body {
 }
 .nosotros-title {
   text-align: center;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: bold;
   color: var(--blue);
   margin-bottom: 2.5rem;
