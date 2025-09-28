@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.disabled = false;
         
         // Mostrar mensaje de éxito
-        showMessage('¡Gracias! Recibimos tu consulta. Te contactaremos prontamente.', 'success');
+        showMessage('¡Gracias! Recibimos tu consulta. Te contactaremos dentro de las próximas 24 horas.', 'success');
         form.reset();
       }, (err) => {
         // Error
@@ -177,26 +177,35 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!messageEl) {
       messageEl = document.createElement('div');
       messageEl.id = 'mensajeConfirmacion';
-      messageEl.style.cssText = `
-        margin-top: 1.5rem;
-        text-align: center;
-        font-size: 1.125rem;
-        font-family: "Roboto", sans-serif;
-        font-weight: bold;
-        padding: 1rem;
-        border-radius: 5px;
-        display: none;
-      `;
+          messageEl.style.cssText = `
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 2rem;
+            font-family: "Roboto", sans-serif;
+            line-height: 1.2;
+            font-weight: bold;
+            padding: 2rem 3rem;
+            border-radius: 8px;
+            display: none;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          `;
       form.appendChild(messageEl);
     }
 
     messageEl.textContent = text;
     messageEl.style.display = 'block';
-    messageEl.style.color = type === 'success' ? '#22c55e' : '#ef4444';
-    messageEl.style.backgroundColor = type === 'success' ? '#f0fdf4' : '#fef2f2';
-    messageEl.style.border = `1px solid ${type === 'success' ? '#22c55e' : '#ef4444'}`;
+    messageEl.style.color = type === 'success' ? '#0C3C60' : '#ef4444';
+    messageEl.style.backgroundColor = type === 'success' ? '#ffffff' : '#fef2f2';
+    messageEl.style.border = `1px solid ${type === 'success' ? '#ffffff' : '#ef4444'}`;
 
     // Scroll hacia el mensaje
     messageEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Ocultar el mensaje automáticamente después de 5 segundos
+    setTimeout(() => {
+      messageEl.style.display = 'none';
+    }, 5000);
   }
 });
