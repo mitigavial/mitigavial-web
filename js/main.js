@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* =======================
    GA4 – Tracking unificado (CTAs + Formularios + Contacto)
-   Requiere GA4 en <head> con id G-GTSRFZ0L4D
+   Requiere GA4 en <head> con id G-GT5RFZ0L4D
 ======================= */
 
 // Fallbacks por si gtag aún no está
