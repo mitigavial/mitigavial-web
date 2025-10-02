@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+  <!-- COMIENZO HEAD -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,8 +78,37 @@
         "description": "Formulario y datos de contacto para solicitar evaluación y presupuesto de IMIV."
       }
     </script>
-  </head>
+    <!-- Google tag (gtag.js) — Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GTSRFZ0L4D"
+    ></script>
+    <script>
+      // DataLayer y helper
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
+      // (Opcional) Consent Mode básico — déjalo como está o ajústalo si usas banner de cookies
+      // gtag('consent', 'default', {
+      //   'ad_storage': 'denied',
+      //   'ad_user_data': 'denied',
+      //   'ad_personalization': 'denied',
+      //   'analytics_storage': 'granted' // cambia a 'denied' si quieres esperar consentimiento
+      // });
+
+      // Inicializa GA4
+      gtag("js", new Date());
+
+      // Configuración recomendada
+      gtag("config", "G-GTSRFZ0L4D", {
+        transport_type: "beacon",
+        anonymize_ip: true,
+      });
+    </script>
+  </head>
+  <!--FIN HEAD -->
   <body>
     <!-- HEADER -->
     <header class="site-header">
