@@ -117,61 +117,71 @@ document.addEventListener("DOMContentLoaded", () => {
   const msg = document.getElementById("form-message");
   if (!form || !msg) return;
 
-  form.addEventListener("submit", function(event) {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     // Cambiar estado del botón
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
-    btn.textContent = 'Enviando...';
+    btn.textContent = "Enviando...";
     btn.disabled = true;
 
     // Configuración de EmailJS
-    const serviceID = 'default_service';
-    const templateID = 'template_f1dp3y9';
+    const serviceID = "default_service";
+    const templateID = "template_f1dp3y9";
 
     // Enviar email
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(() => {
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
         // Éxito
         btn.textContent = originalText;
         btn.disabled = false;
-        showMessageIndex('¡Gracias! Recibimos tu consulta. Te contactaremos dentro de las próximas 24 horas.', 'success');
+        showMessageIndex(
+          "¡Gracias! Recibimos tu consulta. Te contactaremos dentro de las próximas 24 horas.",
+          "success"
+        );
         form.reset();
-      }, (err) => {
+      },
+      (err) => {
         // Error
         btn.textContent = originalText;
         btn.disabled = false;
-        console.error('Error al enviar email:', err);
-        showMessageIndex('Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.', 'error');
-      });
+        console.error("Error al enviar email:", err);
+        showMessageIndex(
+          "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.",
+          "error"
+        );
+      }
+    );
   });
 
   // Función para mostrar mensajes (versión para index)
   function showMessageIndex(text, type) {
     msg.textContent = text;
-    msg.style.display = 'block';
-    msg.style.color = type === 'success' ? '#0C3C60' : '#ef4444';
-    msg.style.backgroundColor = type === 'success' ? '#ffffff' : '#fef2f2';
-    msg.style.border = `1px solid ${type === 'success' ? '#ffffff' : '#ef4444'}`;
-    msg.style.padding = '2rem 3rem';
-    msg.style.borderRadius = '8px';
-    msg.style.fontSize = '2rem';
+    msg.style.display = "block";
+    msg.style.color = type === "success" ? "#0C3C60" : "#ef4444";
+    msg.style.backgroundColor = type === "success" ? "#ffffff" : "#fef2f2";
+    msg.style.border = `1px solid ${
+      type === "success" ? "#ffffff" : "#ef4444"
+    }`;
+    msg.style.padding = "2rem 3rem";
+    msg.style.borderRadius = "8px";
+    msg.style.fontSize = "2rem";
     msg.style.fontFamily = '"Roboto", sans-serif';
-    msg.style.lineHeight = '1.2';
-    msg.style.fontWeight = 'bold';
-    msg.style.textAlign = 'center';
-    msg.style.marginTop = '1.5rem';
-    msg.style.maxWidth = '600px';
-    msg.style.marginLeft = 'auto';
-    msg.style.marginRight = 'auto';
-    
+    msg.style.lineHeight = "1.2";
+    msg.style.fontWeight = "bold";
+    msg.style.textAlign = "center";
+    msg.style.marginTop = "1.5rem";
+    msg.style.maxWidth = "600px";
+    msg.style.marginLeft = "auto";
+    msg.style.marginRight = "auto";
+
     // Scroll hacia el mensaje
-    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    
+    msg.scrollIntoView({ behavior: "smooth", block: "center" });
+
     // Ocultar el mensaje automáticamente después de 5 segundos
     setTimeout(() => {
-      msg.style.display = 'none';
+      msg.style.display = "none";
     }, 5000);
   }
 });
@@ -182,51 +192,59 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formContacto");
   const btn = document.getElementById("button");
-  
+
   if (!form || !btn) return;
 
-  form.addEventListener("submit", function(event) {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     // Cambiar estado del botón
-    btn.value = 'Enviando...';
-    btn.textContent = 'Enviando...';
+    btn.value = "Enviando...";
+    btn.textContent = "Enviando...";
     btn.disabled = true;
 
     // Configuración de EmailJS
-    const serviceID = 'default_service';
-    const templateID = 'template_f1dp3y9';
+    const serviceID = "default_service";
+    const templateID = "template_f1dp3y9";
 
     // Enviar email
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(() => {
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
         // Éxito
-        btn.value = 'Enviar';
-        btn.textContent = 'Enviar';
+        btn.value = "Enviar";
+        btn.textContent = "Enviar";
         btn.disabled = false;
-        
+
         // Mostrar mensaje de éxito
-        showMessage('¡Gracias! Recibimos tu consulta. Te contactaremos dentro de las próximas 24 horas.', 'success');
+        showMessage(
+          "¡Gracias! Recibimos tu consulta. Te contactaremos dentro de las próximas 24 horas.",
+          "success"
+        );
         form.reset();
-      }, (err) => {
+      },
+      (err) => {
         // Error
-        btn.value = 'Enviar';
-        btn.textContent = 'Enviar';
+        btn.value = "Enviar";
+        btn.textContent = "Enviar";
         btn.disabled = false;
-        
-        console.error('Error al enviar email:', err);
-        showMessage('Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.', 'error');
-      });
+
+        console.error("Error al enviar email:", err);
+        showMessage(
+          "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.",
+          "error"
+        );
+      }
+    );
   });
 
   // Función para mostrar mensajes
   function showMessage(text, type) {
     // Crear elemento de mensaje si no existe
-    let messageEl = document.getElementById('mensajeConfirmacion');
+    let messageEl = document.getElementById("mensajeConfirmacion");
     if (!messageEl) {
-      messageEl = document.createElement('div');
-      messageEl.id = 'mensajeConfirmacion';
-          messageEl.style.cssText = `
+      messageEl = document.createElement("div");
+      messageEl.id = "mensajeConfirmacion";
+      messageEl.style.cssText = `
             margin-top: 1.5rem;
             text-align: center;
             font-size: 2rem;
@@ -244,17 +262,131 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     messageEl.textContent = text;
-    messageEl.style.display = 'block';
-    messageEl.style.color = type === 'success' ? '#0C3C60' : '#ef4444';
-    messageEl.style.backgroundColor = type === 'success' ? '#ffffff' : '#fef2f2';
-    messageEl.style.border = `1px solid ${type === 'success' ? '#ffffff' : '#ef4444'}`;
+    messageEl.style.display = "block";
+    messageEl.style.color = type === "success" ? "#0C3C60" : "#ef4444";
+    messageEl.style.backgroundColor =
+      type === "success" ? "#ffffff" : "#fef2f2";
+    messageEl.style.border = `1px solid ${
+      type === "success" ? "#ffffff" : "#ef4444"
+    }`;
 
     // Scroll hacia el mensaje
-    messageEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    
+    messageEl.scrollIntoView({ behavior: "smooth", block: "center" });
+
     // Ocultar el mensaje automáticamente después de 5 segundos
     setTimeout(() => {
-      messageEl.style.display = 'none';
+      messageEl.style.display = "none";
     }, 5000);
   }
 });
+
+/* =======================
+   GA4 – Tracking unificado (CTAs + Formularios + Contacto)
+   Requiere GA4 en <head> con id G-GTSRFZ0L4D
+======================= */
+
+// Fallbacks por si gtag aún no está
+window.dataLayer = window.dataLayer || [];
+window.gtag =
+  window.gtag ||
+  function () {
+    dataLayer.push(arguments);
+  };
+
+/** 1) CLICS que llevan a la página de contacto
+ *  - Detecta <a> cuyo href apunte a contacto.html / contacto / #contacto.
+ *  - También botones con data-cta="contact" (para navegaciones via JS).
+ *  - Además registra clics en mailto:/tel:/WhatsApp como 'contact_click'.
+ */
+document.addEventListener("click", function (e) {
+  // a) <a ...> que llevan a contacto
+  const link = e.target.closest("a");
+  if (link) {
+    const rawHref = (link.getAttribute("href") || "").trim();
+    const href = rawHref || link.href || "";
+
+    const isContactHref =
+      /^#contacto\b/i.test(rawHref) || // ancla interna
+      /contacto(\.html)?(\#.*|\?.*)?$/i.test(rawHref) || // relativo común
+      (() => {
+        // absoluto/relativo normalizado
+        try {
+          return new URL(href, location.href).pathname.includes("contacto");
+        } catch {
+          return false;
+        }
+      })();
+
+    if (isContactHref) {
+      gtag("event", "cta_contact_click", {
+        link_url: href,
+        link_text: (link.textContent || "").trim().slice(0, 120),
+        from_page: location.pathname,
+      });
+      return; // evitar doble registro si además tiene data-cta
+    }
+
+    // b) Clics de contacto directo (tel/mail/whatsapp)
+    if (
+      /^mailto:/i.test(href) ||
+      /^tel:/i.test(href) ||
+      /(?:wa\.me|api\.whatsapp\.com)/i.test(href)
+    ) {
+      gtag("event", "contact_click", {
+        method: /^mailto:/i.test(href)
+          ? "email"
+          : /^tel:/i.test(href)
+          ? "phone"
+          : "whatsapp",
+        href: href,
+        page: location.pathname,
+      });
+      return;
+    }
+  }
+
+  // c) Botones sin <a> pero marcados con data-cta="contact"
+  const ctaBtn = e.target.closest('[data-cta="contact"]');
+  if (ctaBtn) {
+    gtag("event", "cta_contact_click", {
+      link_url: "(js-navigation)",
+      link_text: (ctaBtn.textContent || "").trim().slice(0, 120),
+      from_page: location.pathname,
+    });
+  }
+});
+
+/** 2) Formularios: contamos el lead SOLO cuando EmailJS confirma OK
+ *  - Cubre #contact-form (home) y #formContacto (/contacto) u otros si los agregas.
+ *  - Parchea emailjs.sendForm una vez disponible.
+ */
+(function patchEmailJSWithRetry() {
+  const maxTries = 20; // ~5s si interval=250ms
+  let tries = 0;
+  const interval = setInterval(() => {
+    tries++;
+    if (
+      window.emailjs &&
+      typeof emailjs.sendForm === "function" &&
+      !emailjs.__ga_patched
+    ) {
+      const original = emailjs.sendForm.bind(emailjs);
+      emailjs.sendForm = function (...args) {
+        const formEl = args[2];
+        const formId = formEl && formEl.id ? formEl.id : "(unknown_form)";
+        const p = original(...args);
+        p.then(() => {
+          gtag("event", "generate_lead", {
+            form_id: formId,
+            method: "emailjs",
+            page_location: location.href,
+          });
+        });
+        return p;
+      };
+      emailjs.__ga_patched = true;
+      clearInterval(interval);
+    }
+    if (tries >= maxTries) clearInterval(interval);
+  }, 250);
+})();
