@@ -5,11 +5,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
 body {
   font-family: "Roboto", sans-serif;
   color: #072136;
   background: #fff;
   line-height: 1.6;
+  min-height: 100vh;
 }
 ul {
   list-style: none;
@@ -44,6 +50,7 @@ a {
   will-change: transform;
   z-index: 1000;
   border-bottom: 2px solid #fff;
+  position: relative;
 }
 .site-header.is-hidden {
   transform: translateY(-100%); /* se va hacia arriba */
@@ -2847,195 +2854,7 @@ body {
   }
 }
 
-/* ==========================================
-           RESPONSIVE <550
-   ========================================== */
-@media (max-width: 550px) {
-  /* deja espacio para el CTA dentro del header si lo necesitas */
-  .site-header .container {
-    width: 92%;
-  }
 
-  /* 2 columnas: [brand] | [toggle] */
-  .header-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center; /* alinea verticalmente brand y toggle */
-    column-gap: 12px;
-    position: relative; /* ancla para el CTA absoluto */
-  }
-
-  /* botón hamburguesa: a la derecha, sin trucos */
-  .nav-toggle {
-    grid-column: 2; /* col derecha */
-    justify-self: end; /* pegado al borde del container */
-    align-self: center; /* centrado en la fila */
-    display: inline-block !important;
-    font-size: 28px;
-    line-height: 1;
-    color: #fff;
-    background: transparent;
-    border: 0;
-    padding: 4px 6px;
-    cursor: pointer;
-    /* IMPORTANTE: sin translate ni position absoluto aquí */
-    position: static;
-    transform: translateY(-70px);
-  }
-
-  .site-nav .btn-header {
-    position: absolute;
-    left: 50%;
-    bottom: 12px; /* ajusta altura si quieres */
-    transform: translateX(-50%); /* ← centro real */
-    width: clamp(220px, 80vw, 360px); /* ancho fluido */
-    max-width: calc(100% - 32px); /* respeta márgenes laterales */
-    margin: 0;
-    text-align: center;
-    padding: 12px 14px;
-    border-radius: 10px;
-    z-index: 11;
-  }
-  /* Menú sandwich: oculto cerrado, visible en el panel abierto */
-  .site-nav ul {
-    display: none;
-  }
-  .site-nav.open {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 78vw;
-    max-width: 340px;
-    height: 100vh;
-    background: #072136;
-    padding: 0;
-    z-index: 1000;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Botón de cerrar en esquina superior derecha */
-  .site-nav.open::before {
-    content: "✕";
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-  }
-  .site-nav.open::before:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  /* Lista de navegación centrada */
-  .site-nav.open ul {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 80px auto 40px;
-    padding: 0 20px;
-    list-style: none;
-    align-items: center;
-    flex: 1;
-    justify-content: center;
-  }
-
-  /* Enlaces del menú */
-  .site-nav.open ul li a {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    display: block;
-    text-align: center;
-    min-width: 120px;
-  }
-  .site-nav.open ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-  }
-
-  /* Ocultar botón CTA en el menú móvil */
-  .site-nav.open .btn-header {
-    display: none;
-  }
-}
-
-/* Overlay oscuro detrás del panel móvil */
-@media (max-width: 550px) {
-  body.menu-open::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: calc(
-      100vw - min(78vw, 340px)
-    ); /* Cubre el área no ocupada por el menú */
-    background: rgba(0, 0, 0, 0.65); /* oscuridad */
-    z-index: 1001; /* por encima del header, debajo del panel */
-    opacity: 1;
-    pointer-events: auto; /* bloquea clics al fondo */
-    transition: opacity 0.2s ease;
-  }
-  /* estado por defecto (cerrado) */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  /* asegura que el panel quede por encima del overlay */
-  .site-nav.open {
-    z-index: 1000;
-  }
-}
-
-@media (max-width: 550px) {
-  body.menu-open::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: calc(
-      100vw - min(78vw, 340px)
-    ); /* Cubre el área no ocupada por el menú */
-    background: rgba(0, 0, 0, 0.65);
-    z-index: 1001; /* por encima del header, debajo del panel */
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.2s;
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .site-nav.open {
-    z-index: 1000;
-  }
-}
 
 /* ==========================================
            RESPONSIVE <480

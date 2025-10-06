@@ -48,65 +48,111 @@
 /* =======================
    NAV móvil (toggle)
    ======================= */
-/* =======================
-   NAV móvil (toggle)
-   ======================= */
 (() => {
-  const navToggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector("#nav");
-  if (!navToggle || !nav) return;
-
-  const setIcon = (open) => {
-    navToggle.innerHTML = open ? "✕" : "☰";
-    navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
-    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-  };
-
-  // 👉 función única para abrir/cerrar (incluye overlay y lock scroll)
-  const setOpen = (open) => {
-    nav.classList.toggle("open", open);
-    setIcon(open);
-    document.body.style.overflow = open ? "hidden" : "";
-    document.body.classList.toggle("menu-open", open); // <— opacidad del fondo
-  };
-
-  // Estado inicial del icono
-  setIcon(nav.classList.contains("open"));
-
-  // Toggle al click
-  navToggle.addEventListener("click", () => {
-    setOpen(!nav.classList.contains("open"));
-  });
-
-  // Cerrar con ESC
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && nav.classList.contains("open")) {
-      setOpen(false);
+  function initMobileNav() {
+    const navToggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("nav");
+    
+    if (!navToggle || !nav) {
+      console.warn("Elementos del menú móvil no encontrados");
+      return;
     }
-  });
 
-  // Cerrar al hacer click en un enlace del menú
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => setOpen(false));
-  });
-
-  // Cerrar al clickear la "X" dibujada en la esquina (tu lógica existente)
-  nav.addEventListener("click", (e) => {
-    const rect = nav.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const clickY = e.clientY - rect.top;
-    const buttonSize = 30;
-    const buttonX = rect.width - 20 - buttonSize;
-    const buttonY = 20;
-    if (
-      clickX >= buttonX &&
-      clickX <= buttonX + buttonSize &&
-      clickY >= buttonY &&
-      clickY <= buttonY + buttonSize
-    ) {
-      setOpen(false);
+    function setIcon(open) {
+      navToggle.innerHTML = open ? "✕" : "☰";
+      navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     }
-  });
+
+    let scrollPosition = 0;
+
+    function setOpen(open) {
+      nav.classList.toggle("open", open);
+      setIcon(open);
+      
+      if (open) {
+        // Guardar la posición actual del scroll
+        scrollPosition = window.pageYOffset;
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.classList.add("menu-open");
+      } else {
+        // Restaurar la posición del scroll
+        document.body.classList.remove("menu-open");
+        document.body.style.top = "";
+        window.scrollTo(0, scrollPosition);
+      }
+    }
+
+    // Configuración inicial
+    setIcon(nav.classList.contains("open"));
+
+    // Asegura que el botón esté por encima de overlays
+    navToggle.style.position = "relative";
+    navToggle.style.zIndex = "1002";
+
+    // Control para evitar doble disparo en móviles
+    let suppressNextClick = false;
+
+    // Event Listeners
+    navToggle.addEventListener("click", (e) => {
+      if (suppressNextClick) {
+        suppressNextClick = false;
+        return;
+      }
+      e.preventDefault();
+      setOpen(!nav.classList.contains("open"));
+    });
+
+    navToggle.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      suppressNextClick = true;
+      setTimeout(() => (suppressNextClick = false), 350);
+      setOpen(!nav.classList.contains("open"));
+    });
+
+    // Cerrar con Escape
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("open")) {
+        setOpen(false);
+      }
+    });
+
+    // Cerrar al hacer click en los enlaces
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+
+    // Cerrar al hacer click fuera del menú o en el botón X
+    document.addEventListener("click", (e) => {
+      const closeButton = nav.querySelector(".site-nav.open::after");
+      if ((nav.classList.contains("open") && 
+          !nav.contains(e.target) && 
+          !navToggle.contains(e.target)) ||
+          (e.target === closeButton)) {
+        setOpen(false);
+      }
+    });
+
+    // Agregar evento click al botón X
+    nav.addEventListener("click", (e) => {
+      // Verificar si el click fue en el botón X (pseudo-elemento ::after)
+      const rect = nav.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Área aproximada del botón X (40x40 pixels desde la esquina superior derecha)
+      if (x >= rect.width - 40 && x <= rect.width && y >= 20 && y <= 60) {
+        setOpen(false);
+      }
+    });
+  }
+
+  // Inicializar el menú móvil cuando el DOM está listo
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMobileNav);
+  } else {
+    initMobileNav();
+  }
 })();
 
 /* =======================
