@@ -5,7 +5,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
+html,
+body {
   overflow-x: hidden;
   position: relative;
   width: 100%;
@@ -979,7 +980,7 @@ a {
     padding: 0 2rem;
     margin: 0 auto;
   }
-  
+
   .hero-content-servicios h1 {
     font-size: 28px;
   }
@@ -2388,11 +2389,16 @@ body {
 @media (max-width: 600px) {
   /* ====== INICIO ====== */
   /* “Elaboramos Informes…” y “¿Tu proyecto…?” -> 18px */
-  .hero-subtitle,
+
   .contact .contact-subtitle {
     font-size: 18px;
     line-height: 1.2;
   } /* index.html */
+
+  .hero-subtitle {
+    font-size: 20px;
+    line-height: 1.2;
+  }
 
   .hero-content {
     width: 80%;
@@ -2414,6 +2420,7 @@ body {
   .faq-cta p {
     font-size: 16px;
     max-width: 90% !important;
+    margin-bottom: 25px;
   } /* index.html */
 
   .btn-header {
@@ -2440,10 +2447,15 @@ body {
   .contact-form label,
   .contact-form input,
   .contact-form .form-message,
-  .faq-answer {
+  .faq-answer,
+  .check-list li {
     font-size: 16px !important;
     line-height: 1.4;
   } /* index.html */
+
+  .contact {
+    margin-bottom: 50px;
+  }
 
   /* Títulos “Servicios / Nosotros / FAQ” de las cards -> 20px */
   .info-grid .card h3,
@@ -2853,8 +2865,6 @@ body {
     padding-top: 10px;
   }
 }
-
-
 
 /* ==========================================
            RESPONSIVE <480
